@@ -5,7 +5,7 @@
     &__info {
         font-family: 'Quicksand';
         font-weight: bold;
-        margin-left: 20px;
+        margin-left: 31px;
         &_color {
             color: $dark-75-color;
         }
@@ -20,6 +20,7 @@
     }
     &_H3 {
         font-size: 12px;
+        letter-spacing: 0.3px;
         line-height: 15px;
         text-transform: uppercase;
     }
@@ -30,7 +31,7 @@
     &__demo {
         color: $dark-25-color;
         float: left;
-        width: rem(37);
+        width: 36px;
         text-align: right;
         font-family: 'Montserrat';
         font-weight: normal;

@@ -1,0 +1,30 @@
+.dropdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 20px 0;
+    &__name {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    &__status {
+        text-transform: uppercase;
+        color: $dark-50-color;
+    }
+    &__select {
+        font-family: $mainFont;
+        color: $dark-75-color;
+        font-size: $mainFontSize;
+        flex-basis: 100%;
+        padding: 12px 15px;
+        border: 1px solid $dark-25-color;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    &__option {
+        height: 31px;
+        width: 220px;
+    }
+}

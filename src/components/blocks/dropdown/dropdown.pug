@@ -1,0 +1,13 @@
+//-mixin dropdown(options)
+    .dropdown
+        label.dropdown__name= options.name
+        if (options.status)
+            span.text-field__status= options.status
+            input(class=inputClassName, type="text", placeholder=`${options.placeholder}`,value=options.value)
+.dropdown
+    label.dropdown__name(for="") Dropdown
+    select.dropdown__select
+        option(class="dropdown__option") Сколько гостей
+        option(class="dropdown__option") 1
+        option(class="dropdown__option") 2
+        option(class="dropdown__option") 3

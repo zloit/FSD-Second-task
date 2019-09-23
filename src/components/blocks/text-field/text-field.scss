@@ -1,0 +1,35 @@
+.text-field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 20px 0;
+    &__name {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    &__status {
+        text-transform: uppercase;
+        color: $dark-50-color;
+    }
+    &__content {
+        padding: 12px 15px;
+        border: 1px solid $dark-25-color;
+        box-sizing: border-box;
+        border-radius: 4px;
+        background-color: #fff;
+        color: $dark-75-color;
+        flex-basis: 100%;
+        font-family: $mainFont;
+        font-size: $mainFontSize;
+        line-height: 18px;
+        transition: all 0.25s ease-out;
+        &::placeholder {
+            color: $dark-25-color;
+        }
+        &:hover,&:focus,&_focus {
+            border-color: $dark-50-color;
+        }
+    }
+}

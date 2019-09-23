@@ -1,5 +1,6 @@
 // JS
-import './js/'
+import './js/item-quantity-dropdown.min.js'
+import './js/index.js'
 
 // SCSS
 import './assets/scss/main.scss'

@@ -1,0 +1,18 @@
+include ..\components\blocks\text-field\text-field.pug
+
+
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Form Elements
+    body
+        header 
+            include ../components/blocks/header/header.pug
+        .main-wrapper
+            .main-wrapper-item
+                +text-field({name:"Text field", status: "default", placeholder: "Email"})
+                +text-field({name:"Text field", status: "Hover / Focus", placeholder: "Email", focus: true, value: "This is pretty awesome"})
+                include ..\components\blocks\dropdown\dropdown.pug
