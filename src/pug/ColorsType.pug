@@ -1,0 +1,27 @@
+include ../components/blocks/color-item/color-item.pug
+include ../components/blocks/text-item/text-item.pug
+
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+    body
+        header 
+            include ../components/blocks/header/header.pug 
+        .main-wrapper
+            .main-wrapper__item
+                +color-item({name: "Dark Shade 100%", description: "#1F2041", color: "dark-color"})
+                +color-item({name: "Dark Shade 75%", description: "#1F2041", color: "dark-75-color"})
+                +color-item({name: "Dark Shade 50%", description: "#1F2041", color: "dark-50-color"})
+                +color-item({name: "Dark Shade 25%", description: "#1F2041", color: "dark-25-color"})
+                +color-item({name: "Dark Shade 5%", description: "#1F2041", color: "dark-5-color"})
+                +color-item({name: "Purple", description: "#BC9CFF", color: "purple-color"})
+                +color-item({name: "Green", description: "#6FCF96", color: "green-color"})
+            .main-wrapper__item
+                +text-item({demo: "H1", info: "This one is the sub-section or widget title"})
+                +text-item({demo: "H2", info: "Next one is the item title inside widgets"})
+                +text-item({demo: "H3", info: "This is a label or CTA text", montserrat: true})
+                +text-item({demo: "Body", info: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", color: true})

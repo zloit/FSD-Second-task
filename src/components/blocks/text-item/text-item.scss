@@ -1,0 +1,48 @@
+.text-item {
+    width: 403px;
+    padding-bottom: 50px;
+    display: flex;
+    &__info {
+        font-family: 'Quicksand';
+        font-weight: bold;
+        margin-left: 20px;
+        &_color {
+            color: $dark-75-color;
+        }
+    }
+    &_H1 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    &_H2 {
+        font-size: 19px;
+        line-height: 24px;
+    }
+    &_H3 {
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+    }
+    &_Body {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    &__demo {
+        color: $dark-25-color;
+        float: left;
+        width: rem(37);
+        text-align: right;
+        font-family: 'Montserrat';
+        font-weight: normal;
+    }
+    &_montserrat {
+        font-family: 'Montserrat';
+        font-weight: normal;
+    }
+    &_color {
+        color: $dark-75-color;
+        font-family: Montserrat;
+        font-weight: normal;
+    }
+}
+

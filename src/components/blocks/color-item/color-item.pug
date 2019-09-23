@@ -1,0 +1,8 @@
+mixin color-item(options)
+  .color-item
+    div(class = `color-item__demo color-item__demo_${options.color}`)
+    div.color-item__info
+      span= options.name
+      br
+      span.color-item__info_description= options.description
+      

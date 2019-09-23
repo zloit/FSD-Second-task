@@ -1,0 +1,10 @@
+.main-wrapper {
+    padding: 0 150px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-wrapper__item {
+    display: flex;
+    flex-direction: column;
+}

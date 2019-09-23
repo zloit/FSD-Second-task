@@ -1,0 +1,42 @@
+.color-item {
+    padding-bottom: 20px;
+    width: 270px;
+}
+.color-item__demo {
+    border-radius: 6px;
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 40px;
+}
+.color-item__info {
+    font-family: 'Quicksand';
+    font-weight: bold;
+    padding: rem(7) 0;
+}
+.color-item__info_description {
+    font-family: 'Quicksand';
+    font-weight: normal;
+}
+
+.color-item__demo_dark-color {
+    background: $dark-color;
+}
+.color-item__demo_dark-75-color {
+    background: $dark-75-color;
+}
+.color-item__demo_dark-50-color {
+    background: $dark-50-color;
+}
+.color-item__demo_dark-25-color {
+    background: $dark-25-color;
+}
+.color-item__demo_dark-5-color {
+    background: $dark-5-color;
+}
+.color-item__demo_purple-color {
+    background: $purple-color;
+}
+.color-item__demo_green-color {
+    background: $green-color;
+}
