@@ -7,4 +7,4 @@
 
 Links
 ----
-https://zloit.github.io/Second-task-FSD/dist/index.html
+https://zloit.github.io/FSD-Second-task/dist/index.html
