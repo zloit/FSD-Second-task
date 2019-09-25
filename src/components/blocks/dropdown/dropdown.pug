@@ -1,13 +1,15 @@
-//-mixin dropdown(options)
+mixin dropdown-option(options)
+    .dropdown__option(data-id=`${options.data-id}`)
+        div
+            p.dropdown__item= options.item
+
+.dropdown-container
+    span.dropdown__name dropdown
+    span.dropdown__status default
     .dropdown
-        label.dropdown__name= options.name
-        if (options.status)
-            span.text-field__status= options.status
-            input(class=inputClassName, type="text", placeholder=`${options.placeholder}`,value=options.value)
-.dropdown
-    label.dropdown__name(for="") Dropdown
-    select.dropdown__select
-        option(class="dropdown__option") Сколько гостей
-        option(class="dropdown__option") 1
-        option(class="dropdown__option") 2
-        option(class="dropdown__option") 3
+        p.dropdown__selection Сколько гостей
+        i.dropdown__turn expand_more
+        .dropdown__menu
+            +dropdown-option({item: "Взрослые"})
+            +dropdown-option({item: "Дети"})
+            +dropdown-option({item: "Младенцы"})

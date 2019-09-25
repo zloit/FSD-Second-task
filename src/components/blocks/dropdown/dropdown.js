@@ -6,9 +6,9 @@
       textPlural: 'items',
       controls: {
         position: 'right',
-        displayCls: 'dropdown-content',
-        controlsCls: 'dropdown-item-controls',
-        counterCls: 'counter',
+        displayCls: 'dropdown__content',
+        controlsCls: 'dropdown__controls',
+        counterCls: 'dropdown__counter',
       },
       items: {},
       onChange: () => {},
@@ -45,13 +45,10 @@
         function addControls (id, $item) {
           const $controls = $('<div />').addClass(settings.controls.controlsCls);
           const $decrementButton = $(`
-            <button class="button-decrement">
-              <i class="icon-decrement"></i>
-            </button>
+            <button class="dropdown__btn-decrement">-</button>
           `);
           const $incrementButton = $(`
-            <button class="button-increment">
-              <i class="icon-decrement icon-increment"></i>
+            <button class="dropdown__btn-increment">+</i>
             </button>
           `);
           const $counter = $(`<span>${itemCount[id]}</span>`).addClass(settings.controls.counterCls);
@@ -101,7 +98,7 @@
         }
   
         $this.click(() => {
-          $this.toggleClass('menu-open');
+          $this.toggleClass('dropdown__menu-open');
         });
   
         $items.each(function () {
@@ -124,21 +121,5 @@
 
 $(document).ready(() => {
     $('.dropdown').dropdown({
-        // max total items
-        maxItems: Infinity,
-        // min total items
-        minItems: 0,
-        // text to show on the dropdown
-        selectionText: 'гость',
-        // text to show for multiple items
-        textPlural: 'гостей',
-        // buttons to increment/decrement
-        controls: {
-          position: 'right',
-          displayCls: 'dropdown-item-display',
-          controlsCls: 'dropdown-item-controls',
-          counterCls: 'counter'
-        },
-
     });
   });

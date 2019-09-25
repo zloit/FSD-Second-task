@@ -1,4 +1,107 @@
 .dropdown {
+    align-items: center;
+	border: 1px solid #E2E2E2;
+	border-radius: 4px;
+	cursor: pointer;
+	display: flex;
+	height: 50px;
+	justify-content: space-between;
+	padding: 12px 15px;
+	position: relative;
+	width: 100%;
+    &__selection {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: $dark-75-color;
+    }
+    &__turn {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        user-select: none; 
+        font-size: 24px;
+        color: $dark-50-color;
+    }
+    &__menu {
+        background-color: #FFFFFF;
+        cursor: default;
+        display: none;
+        left: 0;
+        margin: -2px -1px -1px;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        transition: all 0.5s ease-in-out;
+        z-index: 99999;
+        border: 1px solid $dark-50-color;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        &-open {
+            border-color: $dark-50-color;
+            border-radius: 4px 4px 0 0;
+            .dropdown__menu {
+                display: block;
+            }
+        }
+    }
+    &__option {
+        padding: 0 15px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+    }
+    &__controls {
+        display: flex;
+        align-items: center;
+        height: 45px;
+    }
+    &__counter {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        width: 32px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0 10px;
+    }
+    &__btn-increment, &__btn-decrement {
+        border: 1px solid $dark-25-color;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+    &__name {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    &__status {
+        text-transform: uppercase;
+        color: $dark-50-color;
+    }
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-size: 12px;
+        line-height: 18px;
+        margin: 20px 0;
+    }
+}
+
+/*.dropdown {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -27,4 +130,4 @@
         height: 31px;
         width: 220px;
     }
-}
+}*/
