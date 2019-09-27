@@ -1,19 +1,19 @@
-.text-field {
+.date-picker {
     padding: 9px 15px;
-    border: 1px solid $dark-25-color;
-    box-sizing: border-box;
-    border-radius: 4px;
-    background-color: #fff;
-    color: $dark-75-color;
     flex-basis: 100%;
     font-family: $mainFont;
     font-size: $mainFontSize;
     line-height: 24px;
+    text-transform: uppercase;
+    border: 1px solid $dark-25-color;
+    border-radius: 4px;
+    background-color: #fff;
+    color: $dark-75-color;
     transition: all 0.25s ease-out;
     &::placeholder {
         color: $dark-25-color;
     }
     &:hover,&:focus,&_focus {
-        border-color: $dark-50-color;
+        border-color: $dark-75-color;
     }
 }

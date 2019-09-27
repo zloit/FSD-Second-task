@@ -1,0 +1,8 @@
+mixin field-wrapper(options)
+    -let wrapperCls = "field-wrapper"
+    -wrapperCls += options.dateDropdown ? " field-wrapper_date-dropdown" : ""
+    div(class=wrapperCls)
+        label.field-wrapper__name= options.name
+        if (options.status)
+            span.field-wrapper__status= options.status
+        block

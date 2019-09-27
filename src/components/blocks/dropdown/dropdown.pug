@@ -1,15 +1,14 @@
-mixin dropdown-option(options)
-    .dropdown__option(data-id=`${options.data-id}`)
-        div
-            p.dropdown__item= options.item
-
-.dropdown-container
-    span.dropdown__name dropdown
-    span.dropdown__status default
+mixin dropdown(options)
     .dropdown
-        p.dropdown__selection Сколько гостей
+        p.dropdown__selection= options.text
         i.dropdown__turn expand_more
         .dropdown__menu
-            +dropdown-option({item: "Взрослые"})
-            +dropdown-option({item: "Дети"})
-            +dropdown-option({item: "Младенцы"})
+            block
+            .dropdown__btn-wrapper
+                button.dropdown__clear Очистить
+                button.dropdown__apply Применить
+
+mixin dropdown-option(options)
+    .dropdown__option(data-id=`${options.id}`)
+        div
+            p.dropdown__item= options.item

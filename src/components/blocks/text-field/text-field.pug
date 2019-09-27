@@ -1,13 +1,4 @@
-
-
 mixin text-field(options)
-    - var inputClassName = "text-field__content"
-    -inputClassName += options.focus ? " text-field__content_focus" : ""
-    .text-field
-        label.text-field__name= options.name
-        if (options.status)
-            span.text-field__status= options.status
-        if (options.value)
-            input(class=inputClassName, type="text", placeholder=`${options.placeholder}`,value=options.value)
-        else
-            input(class=inputClassName, type="text", placeholder=`${options.placeholder}`)
+    - var inputClassName = "text-field"
+    -inputClassName += options.focus ? " text-field_focus" : ""
+    input(class=inputClassName, type="text", placeholder=`${options.placeholder}`,value=options.value)

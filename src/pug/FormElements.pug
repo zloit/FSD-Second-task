@@ -1,6 +1,8 @@
 include ..\components\blocks\text-field\text-field.pug
-
-
+include ..\components\blocks\date-picker\date-picker.pug
+include ..\components\blocks\field-wrapper\field-wrapper.pug
+include ..\components\blocks\dropdown\dropdown.pug
+include ..\components\blocks\date-dropdown\date-dropdown.pug
 <!DOCTYPE html>
 html(lang="en")
     head
@@ -13,6 +15,20 @@ html(lang="en")
             include ../components/blocks/header/header.pug
         .main-wrapper
             .main-wrapper-item
-                +text-field({name:"Text field", status: "default", placeholder: "Email"})
-                +text-field({name:"Text field", status: "Hover / Focus", placeholder: "Email", focus: true, value: "This is pretty awesome"})
-                include ..\components\blocks\dropdown\dropdown.pug
+                +field-wrapper({name:"Text field", status: "default"})
+                    +text-field({placeholder: "Email"})
+                +field-wrapper({name:"Text field", status: "Hover / Focus"})
+                    +text-field({placeholder: "Some text", focus: true, value: "This is pretty awesome"})
+                +field-wrapper({name: "Dropdown", status: "default"})
+                    +dropdown({text: "Сколько гостей"})
+                        +dropdown-option({item: "Взрослые", id: "item1"})
+                        +dropdown-option({item: "Дети", id: "item2"})
+                        +dropdown-option({item: "Младенцы",id: "item3"})
+                +field-wrapper({name: "Masked text field", status: "default"})
+                    +date-picker({placeholder: "ДД.ММ.ГГГГ"})
+                .date-dropdown__container    
+                    +field-wrapper({name: "Date dropdown",dateDropdown: true})
+                        +date-dropdown({value: "дд.мм.гггг"})
+                    +field-wrapper({name: "Date dropdown",dateDropdown: true})
+                        +date-dropdown({value: "дд.мм.гггг"})
+                

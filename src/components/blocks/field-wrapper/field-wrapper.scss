@@ -1,0 +1,29 @@
+.field-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0;
+    line-height: 18px;
+    &__name {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+    }
+    &__status {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: right;
+        text-transform: uppercase;
+        color: $dark-50-color;
+    }
+    &_date-dropdown:nth-last-child(n+2) {
+        margin-right: 20px;
+    }
+}

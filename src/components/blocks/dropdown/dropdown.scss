@@ -1,17 +1,19 @@
 .dropdown {
+    position: relative;
+	display: flex;
+	flex-basis: 100%;
+	justify-content: space-between;
+	padding: 12px 9px 12px 15px;
     align-items: center;
 	border: 1px solid #E2E2E2;
 	border-radius: 4px;
-	cursor: pointer;
-	display: flex;
-	height: 50px;
-	justify-content: space-between;
-	padding: 12px 15px;
-	position: relative;
-	width: 100%;
+    cursor: pointer;
+    transition: .5s;
+    &:hover {
+        border-color: $dark-50-color;
+    }
     &__selection {
         font-family: 'Montserrat';
-        font-style: normal;
         font-weight: normal;
         font-size: 14px;
         line-height: 18px;
@@ -26,18 +28,17 @@
         color: $dark-50-color;
     }
     &__menu {
-        background-color: #FFFFFF;
-        cursor: default;
-        display: none;
-        left: 0;
-        margin: -2px -1px -1px;
         position: absolute;
+        z-index: 1;
+        top: 44px;
         right: 0;
-        top: 50px;
-        transition: all 0.5s ease-in-out;
-        z-index: 99999;
+        left: 0;
+        display: none;
+        margin: -2px -1px -1px;
+        cursor: default;
         border: 1px solid $dark-50-color;
         border-radius: 0 0 4px 4px;
+        background-color: #FFFFFF;
         box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
         &-open {
             border-color: $dark-50-color;
@@ -48,21 +49,45 @@
         }
     }
     &__option {
-        padding: 0 15px;
-        align-items: center;
         display: flex;
+        align-items: center;
         justify-content: space-between;
+        padding: 6px 6px 0 15px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: uppercase;
+        background-color: #fff;
+    }
+    &__apply,&__clear {
+        background-color: #fff;
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: bold;
         font-size: 12px;
         line-height: 15px;
         text-transform: uppercase;
+        cursor: pointer;
+    }
+    &__apply {
+        padding-right: 7px;
+        color: $purple-color;
+    }
+    &__clear {
+        padding-left: 14px;
+        color: $dark-50-color;
+    }
+    &__btn-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 7px;
+        padding: 13px 0;
     }
     &__controls {
         display: flex;
         align-items: center;
-        height: 45px;
     }
     &__counter {
         font-family: 'Montserrat';
@@ -76,58 +101,19 @@
         padding: 0 10px;
     }
     &__btn-increment, &__btn-decrement {
-        border: 1px solid $dark-25-color;
-        border-radius: 50%;
         width: 30px;
         height: 30px;
         box-sizing: border-box;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        border: 1px solid $dark-25-color;
+        border-radius: 50%;
         background-color: #fff;
     }
-    &__name {
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-    &__status {
-        text-transform: uppercase;
-        color: $dark-50-color;
-    }
-    &-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        font-size: 12px;
-        line-height: 18px;
-        margin: 20px 0;
+    &__forbid {
+        border-color: $dark-5-color;
     }
 }
-
-/*.dropdown {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 12px;
-    line-height: 18px;
-    margin: 20px 0;
-    &__name {
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-    &__status {
-        text-transform: uppercase;
-        color: $dark-50-color;
-    }
-    &__select {
-        font-family: $mainFont;
-        color: $dark-75-color;
-        font-size: $mainFontSize;
-        flex-basis: 100%;
-        padding: 12px 15px;
-        border: 1px solid $dark-25-color;
-        box-sizing: border-box;
-        border-radius: 4px;
-    }
-    &__option {
-        height: 31px;
-        width: 220px;
-    }
-}*/

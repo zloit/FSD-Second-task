@@ -1,8 +1,11 @@
 .color-item {
-    padding-bottom: 18px;
+    //padding-bottom: 18px;
     width: 270px;
     font-size: 19px;
     line-height: 29px;
+    &:nth-last-child(n+2){
+        padding-bottom: 18px;
+    }
 }
 .color-item__demo {
     border-radius: 6px;
