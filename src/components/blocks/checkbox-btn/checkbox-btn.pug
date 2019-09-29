@@ -1,0 +1,7 @@
+mixin checkbox-btn(options)
+    .checkbox-btn
+        if (options.checked)
+            input(class="checkbox-btn__checkbox" type="checkbox" name=`${options.name}` id=`${options.name}` checked="checked")
+        else
+            input(class="checkbox-btn__checkbox" type="checkbox" name=`${options.name}` id=`${options.name}`)
+        label(class="checkbox-btn__label" for=`${options.name}`)= options.text

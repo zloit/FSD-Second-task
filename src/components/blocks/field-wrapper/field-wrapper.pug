@@ -1,8 +1,11 @@
 mixin field-wrapper(options)
     -let wrapperCls = "field-wrapper"
+    -let nameCls = "field-wrapper__name"
+    -nameCls += options.highBottom ? " field-wrapper__name_high-bottom" : ""
     -wrapperCls += options.dateDropdown ? " field-wrapper_date-dropdown" : ""
+    -wrapperCls += options.tight ? " field-wrapper_tight" : ""
     div(class=wrapperCls)
-        label.field-wrapper__name= options.name
+        label(class=nameCls)= options.name
         if (options.status)
             span.field-wrapper__status= options.status
         block

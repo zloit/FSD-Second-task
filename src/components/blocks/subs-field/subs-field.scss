@@ -1,0 +1,38 @@
+.subs-field {
+    position: relative;
+	display: flex;
+	flex-basis: 100%;
+	justify-content: space-between;
+	padding: 9px 9px 9px 15px;
+    align-items: center;
+	border: 1px solid #E2E2E2;
+	border-radius: 4px;
+    cursor: pointer;
+    transition: .5s;
+    &:hover {
+        border-color: $dark-50-color;
+    }
+    &__email {
+        width: 100%;
+        font-family: 'Montserrat';
+        font-weight: normal;
+        font-size: $mainFontSize;
+        line-height: 24px;
+        color: $dark-75-color;
+        &::placeholder {
+            font-family: 'Montserrat';
+            color: $dark-25-color;
+        }
+    }
+    &__submit {
+        padding: 0;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        user-select: none; 
+        font-size: 24px;
+        color: $purple-color;
+        background: #fff;
+        cursor: pointer;
+    }
+}

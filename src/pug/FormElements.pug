@@ -3,6 +3,11 @@ include ..\components\blocks\date-picker\date-picker.pug
 include ..\components\blocks\field-wrapper\field-wrapper.pug
 include ..\components\blocks\dropdown\dropdown.pug
 include ..\components\blocks\date-dropdown\date-dropdown.pug
+include ..\components\blocks\date-filter\date-filter.pug
+include ..\components\blocks\subs-field\subs-field.pug
+include ..\components\blocks\checkbox-btn\checkbox-btn.pug
+include ..\components\blocks\radio-btn\radio-btn.pug
+
 <!DOCTYPE html>
 html(lang="en")
     head
@@ -14,7 +19,7 @@ html(lang="en")
         header 
             include ../components/blocks/header/header.pug
         .main-wrapper
-            .main-wrapper-item
+            .main-wrapper__item
                 +field-wrapper({name:"Text field", status: "default"})
                     +text-field({placeholder: "Email"})
                 +field-wrapper({name:"Text field", status: "Hover / Focus"})
@@ -31,4 +36,24 @@ html(lang="en")
                         +date-dropdown({value: "дд.мм.гггг"})
                     +field-wrapper({name: "Date dropdown",dateDropdown: true})
                         +date-dropdown({value: "дд.мм.гггг"})
-                
+                +field-wrapper({name: "Filter date dropdown", tight: true})
+                    +date-filter({value: "19 авг - 23 авг"})
+                +field-wrapper({name: "Subscription text field", tight: true})
+                    +subs-field({placeholder: "Email"})
+            .main-wrapper__item
+                +field-wrapper({name: "Checkbox Buttons",highBottom: true})
+                    +checkbox-btn({text: "Можно курить", name: "smoking"})
+                    +checkbox-btn({text: "Можно с питомцами", name: "pets", checked: true})
+                    +checkbox-btn({text: "Можно пригласить гостей (до 10 человек)", name: "guests", checked: true})
+                +field-wrapper({name: "Radio Buttons",highBottom: true})
+                    +radio-btn-container()
+                        +radio-btn({text: "Мужчина", name: "sex", id: "men"})
+                        +radio-btn({text: "Женщина", name: "sex", id: "women"})
+                //- +field-wrapper({name: "Toggle"})
+
+                //- +field-wrapper({name: "like button"})
+
+                //- +field-wrapper({name: "rate button"})
+
+            .main-wrapper__item
+

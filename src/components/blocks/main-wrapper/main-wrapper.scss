@@ -1,10 +1,11 @@
 .main-wrapper {
     padding: 0 150px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .main-wrapper__item {
     display: flex;
     flex-direction: column;
+    max-width: 320px;
 }
