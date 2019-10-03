@@ -1,0 +1,6 @@
+mixin like-btn(options)
+    - let btnCls = "like-btn"
+    - btnCls += options.liked ? " like-btn_liked" : ""
+    div(class=btnCls id="likebtn" data-counter)
+        span(class="like-btn__like")
+        label(class="like-btn__count")= options.likes

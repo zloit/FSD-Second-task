@@ -1,0 +1,7 @@
+mixin toggle(options)
+    .toggle
+        if (options.checked)
+            input(class="toggle__checkbox" type="checkbox" name=`${options.name}` id=`${options.name}` checked="checked")
+        else
+            input(class="toggle__checkbox" type="checkbox" name=`${options.name}` id=`${options.name}`)
+        label(class="toggle__label" for=`${options.name}`)= options.text

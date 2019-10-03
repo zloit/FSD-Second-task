@@ -1,0 +1,39 @@
+.like-btn {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background: #FFFFFF;
+    border: 1px solid $dark-25-color;
+    border-radius: 10px;
+    &__like {
+        display: none;
+    }
+    &__count {
+        display: flex;
+        cursor: pointer;
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        color: $dark-25-color;
+        &::before {
+            content: "favorite_border";
+            width: 20px;
+            text-align: center;
+            font-family: Material Icons;
+        }
+    }
+    &:hover, &_liked{
+        border-color: $purple-color;
+        color: $purple-color;
+        & .like-btn__count{
+            color: $purple-color;
+            &:before {
+                content: "favorite";
+            } 
+        }
+    }
+    &:nth-last-child(n+2) {
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,54 @@
+.link {
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 15px;
+    font-family: $mainFont;
+    font-weight: bold;
+    color: $purple-color;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: .1s;
+    cursor: pointer;
+    &:hover {
+        color: $dark-25-color;
+    }
+    &_btn {     
+        padding: 15px 20px;
+        border-radius: 22px;
+        color: #fff;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        &:hover {opacity: .5; color: #fff;}
+    }
+    &_border-btn {
+        padding: 15px 20px;
+        border: 2px solid $purple-color;
+        border-radius: 22px;
+        color: $purple-color;
+        &:hover {opacity: .5; color: $purple-color;}
+    }
+    &_big-btn {
+        position: relative;
+        width: 100%;
+        padding: 15px 20px;
+        text-align: center;
+        border-radius: 22px;
+        color: #fff;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        &:hover {opacity: .5; color: #fff;}
+        &::after {
+            content: 'arrow_forward';
+            position: absolute;
+            right: 0;
+            width: 44px;
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            text-transform: none;
+        }
+    }
+    &:nth-last-child(n+2) {
+        margin-right: 20px;
+        margin-bottom: 30px;
+    }
+}       

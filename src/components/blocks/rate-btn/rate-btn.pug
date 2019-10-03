@@ -1,0 +1,9 @@
+mixin rate-btn(options)
+    -const n = options.stars
+    .rate-btn
+        -for (let i=n; i>0; i--)
+            if (options.checked==i)
+                input(class="rate-btn__star" type="radio" id=`${options.name}-${i}` value=`${i}` name=`${options.name}` checked="checked")
+            else
+                input(class="rate-btn__star" type="radio" id=`${options.name}-${i}` value=`${i}` name=`${options.name}`)
+            label(class="rate-btn__label" for=`${options.name}-${i}` title="")

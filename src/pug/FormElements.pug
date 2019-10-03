@@ -7,6 +7,13 @@ include ..\components\blocks\date-filter\date-filter.pug
 include ..\components\blocks\subs-field\subs-field.pug
 include ..\components\blocks\checkbox-btn\checkbox-btn.pug
 include ..\components\blocks\radio-btn\radio-btn.pug
+include ..\components\blocks\toggle\toggle.pug
+include ..\components\blocks\rate-btn\rate-btn.pug
+include ..\components\blocks\like-btn\like-btn.pug
+include ..\components\blocks\range-slider\range-slider.pug
+include ..\components\blocks\link\link.pug
+
+
 
 <!DOCTYPE html>
 html(lang="en")
@@ -41,7 +48,7 @@ html(lang="en")
                 +field-wrapper({name: "Subscription text field", tight: true})
                     +subs-field({placeholder: "Email"})
             .main-wrapper__item
-                +field-wrapper({name: "Checkbox Buttons",highBottom: true})
+                +field-wrapper({name: "Checkbox Buttons",highBottom: true, tocolumn: true})
                     +checkbox-btn({text: "Можно курить", name: "smoking"})
                     +checkbox-btn({text: "Можно с питомцами", name: "pets", checked: true})
                     +checkbox-btn({text: "Можно пригласить гостей (до 10 человек)", name: "guests", checked: true})
@@ -49,11 +56,25 @@ html(lang="en")
                     +radio-btn-container()
                         +radio-btn({text: "Мужчина", name: "sex", id: "men"})
                         +radio-btn({text: "Женщина", name: "sex", id: "women"})
-                //- +field-wrapper({name: "Toggle"})
-
-                //- +field-wrapper({name: "like button"})
-
-                //- +field-wrapper({name: "rate button"})
+                +field-wrapper({name: "Toggle",highBottom: true, tocolumn: true})
+                    +toggle({text:"Получать спецпредложения", name: "offers", checked: true})
+                    +toggle({text:"Получать спецпредложения"})
+                +field-wrapper({name: "Like button",highBottom: true})
+                    +like-btn({likes: 2})
+                    +like-btn({likes: 12, liked: true})
+                +field-wrapper({name: "Rate button",highBottom: true})
+                    +rate-btn({stars: 5,name:"rating-1", checked: 4})
+                    +rate-btn({stars: 5,name:"rating-2", checked: 5})
 
             .main-wrapper__item
-
+                +field-wrapper({name: "Range Slider",highBottom: true, status:"5 000₽ - 10 000₽", statusId: "range-slider-result"})
+                    +range-slider({from: "0",to: "15000",step: "500"})
+                +field-wrapper({name:"Buttons",highBottom: true})
+                    +link({text: "Click me", btn: true})
+                    +link({text: "Click me", hover: true, btn: true})
+                    +link({text: "Click me", borderBtn: true})
+                    +link({text: "Click me", borderBtn: true, hover: true})
+                    +link({text: "Click me"})
+                    +link({text: "Click me",  hover: true})
+                    +link({text: "Перейти к оплате", bigBtn: true})
+                +field-wrapper({name:"Pagination",highBottom: true})

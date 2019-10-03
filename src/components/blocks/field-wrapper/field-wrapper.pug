@@ -1,11 +1,18 @@
 mixin field-wrapper(options)
     -let wrapperCls = "field-wrapper"
     -let nameCls = "field-wrapper__name"
-    -nameCls += options.highBottom ? " field-wrapper__name_high-bottom" : ""
+    -let blockCls = "field-wrapper__block"
     -wrapperCls += options.dateDropdown ? " field-wrapper_date-dropdown" : ""
     -wrapperCls += options.tight ? " field-wrapper_tight" : ""
+    -nameCls += options.highBottom ? " field-wrapper__name_high-bottom" : ""
+    -blockCls += options.tocolumn ? " field-wrapper__block_to-column" : ""
     div(class=wrapperCls)
-        label(class=nameCls)= options.name
-        if (options.status)
-            span.field-wrapper__status= options.status
-        block
+        .field-wrapper__info
+            label(class=nameCls)= options.name
+            if (options.status)
+                if (options.statusId)
+                    span(class="field-wrapper__status" id=`${options.statusId}`)= options.status
+                else
+                    span(class="field-wrapper__status")= options.status
+        div(class=blockCls)  
+            block

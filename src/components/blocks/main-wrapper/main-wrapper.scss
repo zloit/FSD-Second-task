@@ -5,7 +5,8 @@
 }
 
 .main-wrapper__item {
+    max-width: 320px;
     display: flex;
     flex-direction: column;
-    max-width: 320px;
+    flex-grow: 1;
 }

@@ -1,0 +1,34 @@
+.rate-btn {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+    &__star {
+        display: none;
+        &:checked ~ .rate-btn__label:before {
+            content: "star";
+        }
+    }
+    &__label {
+        &::before {
+            content: 'star_border';
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            font-family: Material Icons;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 20px;
+            cursor: pointer;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &:hover:before, &:hover ~ &:before {
+            content: "star";
+        }
+    }
+}
