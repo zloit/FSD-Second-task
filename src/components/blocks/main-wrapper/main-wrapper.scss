@@ -2,11 +2,12 @@
     padding: 0 150px;
     display: flex;
     justify-content: space-between;
+    flex-flow: row wrap;
 }
 
 .main-wrapper__item {
-    max-width: 320px;
+    width: 320px;
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    flex-flow: column wrap;
+    margin-bottom: 100px;
 }

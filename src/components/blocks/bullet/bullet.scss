@@ -1,0 +1,20 @@
+.bullet-list {
+    &__item {
+        position: relative;
+        padding-left: 20px;
+        line-height: 24px;
+        color: $dark-75-color;
+        &:nth-last-child(n+2) {
+            margin-bottom: 10px;
+        }
+        &:before {
+            content: "lens";
+            position: absolute;
+            display: inline-block;
+            left: 0;
+            font-family: Material Icons;
+            font-size: 10px;
+            color: $dark-25-color;
+        }
+    }
+}

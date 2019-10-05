@@ -1,0 +1,9 @@
+mixin expand-checklist(options)
+    -let listCls = "expand-checklist__list"
+    -listCls += (options.expand) ? " expand-checklist__list_expand" : ""
+    div(class="expand-checklist")
+        div(class="expand-checklist__head" id=options.id data-checkboxlist)
+            p.expand-checklist__title= options.title
+            span.expand-checklist__more expand_more
+        div(class=listCls)
+            block

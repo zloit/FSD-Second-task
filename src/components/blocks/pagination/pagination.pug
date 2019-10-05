@@ -1,0 +1,20 @@
+mixin pagination(options)
+    -let pgnCls = "pagination"
+    -let pageLinkCls = "pagination__page-link"
+    -let n = options.currentPage
+    -let total = options.total
+    .pagination__container
+        div(class=pgnCls)
+            if n-1>0
+                span(class="pagination__dots") ...
+            if n<=2
+                -for (let i=1; i<=3;i++)
+                    -let tempLink = pageLinkCls
+                    -tempLink += (i==n) ? " pagination__page-link_current" : ""
+                    a(class=tempLink href="#")=i
+            if n+1<total
+                span(class="pagination__dots") ...
+            a(class="pagination__page-link" href="#")= total
+            a(class="pagination__next-page" href="#") arrow_forward
+        div(class="pagination__info")
+            p= `${n} – ${n*12} из 100+ вариантов аренды`

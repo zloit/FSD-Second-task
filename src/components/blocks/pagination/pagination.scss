@@ -1,0 +1,58 @@
+.pagination {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    &__page-link {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $mainFont;
+        font-size: 12px;
+        line-height: 15px;
+        color: $dark-50-color;
+        border-radius: 22px;
+        &:hover {
+            color: #fff;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            opacity: .5;
+        }
+        &_current {
+            color: #fff;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        }
+    }
+    &__dots {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        color: $dark-50-color;
+    }
+    &__next-page {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        line-height: 20px;
+        color: #fff;
+        font-family: Material Icons;
+        font-style: normal;
+        font-weight: normal;
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        border-radius: 22px;
+    }
+    &__info {
+        padding-left: 6px;
+    }
+}

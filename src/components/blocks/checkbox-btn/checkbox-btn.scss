@@ -2,6 +2,7 @@
     position: relative;
     width: 100%;
     display: flex;
+    flex-direction: column;
     &__checkbox {
         position: absolute;
         z-index: -1;
@@ -24,10 +25,19 @@
         }
         padding: 1px 0 1px 30px;
         font-family: $mainFont;
+        color: $dark-75-color;
         font-style: normal;
         font-weight: normal;
         font-size: $mainFontSize;
         line-height: 18px;
+        margin-bottom: 5px;
+        &_bold {
+            font-weight: bold;
+        }
+    }
+    &__description {
+        padding-left: 30px;
+        color: $dark-50-color;
     }
     &:hover .checkbox-btn__label::before{
         border-color: $purple-color;

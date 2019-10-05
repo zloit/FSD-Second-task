@@ -1,7 +1,16 @@
 mixin checkbox-btn(options)
+    -let labelCls = "checkbox-btn__label"
+    -labelCls += (options.description) ? " checkbox-btn__label_bold" : ""
     .checkbox-btn
-        if (options.checked)
-            input(class="checkbox-btn__checkbox" type="checkbox" name=`${options.name}` id=`${options.name}` checked="checked")
-        else
-            input(class="checkbox-btn__checkbox" type="checkbox" name=`${options.name}` id=`${options.name}`)
-        label(class="checkbox-btn__label" for=`${options.name}`)= options.text
+        input(
+            class="checkbox-btn__checkbox" 
+            type="checkbox" 
+            name=`${options.name}` 
+            id=`${options.name}`  
+            checked=options.checked
+            )
+        label(
+            class=labelCls
+            for=`${options.name}`)= options.text
+        if (options.description)
+            p.checkbox-btn__description= options.description

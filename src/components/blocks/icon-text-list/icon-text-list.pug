@@ -1,0 +1,10 @@
+mixin iconTextList(options)
+    ul.icon-text-list
+        block
+
+mixin iconTextListItem(options)
+    li.icon-text-list__item
+        .icon-text-list__icon= options.icon
+        .icon-text-list__body
+            p.icon-text-list__title= options.title
+            p.icon-text-list__description= options.description

@@ -12,7 +12,11 @@ include ..\components\blocks\rate-btn\rate-btn.pug
 include ..\components\blocks\like-btn\like-btn.pug
 include ..\components\blocks\range-slider\range-slider.pug
 include ..\components\blocks\link\link.pug
-
+include ..\components\blocks\pagination\pagination.pug
+include ..\components\blocks\expand-checklist\expand-checklist.pug
+include ..\components\blocks\bullet\bullet.pug
+include ..\components\blocks\icon-text-list\icon-text-list.pug
+include ..\components\blocks\comment\comment.pug
 
 
 <!DOCTYPE html>
@@ -78,3 +82,63 @@ html(lang="en")
                     +link({text: "Click me",  hover: true})
                     +link({text: "Перейти к оплате", bigBtn: true})
                 +field-wrapper({name:"Pagination",highBottom: true})
+                    +pagination({currentPage: 1, total: 15})
+            .main-wrapper__item
+                +field-wrapper({name: "Dropdown", status: "default"})
+                    +dropdown({text: "2 спальни, 2 кровати..."})
+                        +dropdown-option({item: "Спальни", id: "item1"})
+                        +dropdown-option({item: "Кровати", id: "item2"})
+                        +dropdown-option({item: "Взрослые",id: "item3"})
+                +field-wrapper({name: "Dropdown", status: "default"})
+                    +dropdown({text: "2 спальни, 2 кровати..."})
+                        +dropdown-option({item: "Спальни", id: "item1"})
+                        +dropdown-option({item: "Кровати", id: "item2"})
+                        +dropdown-option({item: "Взрослые",id: "item3"})
+            .main-wrapper__item
+                +field-wrapper({name: "Dropdown", status: "default"})
+                    +dropdown({text: "2 спальни, 2 кровати..."})
+                        +dropdown-option({item: "Спальни", id: "item1"})
+                        +dropdown-option({item: "Кровати", id: "item2"})
+                        +dropdown-option({item: "Взрослые",id: "item3"})
+            .main-wrapper__item
+                +field-wrapper({name: "Dropdown", status: "default"})
+                    +dropdown({text: "2 спальни, 2 кровати..."})
+                        +dropdown-option({item: "Спальни", id: "item1"})
+                        +dropdown-option({item: "Кровати", id: "item2"})
+                        +dropdown-option({item: "Взрослые",id: "item3"})
+            .main-wrapper__item
+                +expand-checklist({title: "expandable checkbox list", id: "expandChecklist"})
+                    +checkbox-btn({text: "Завтрак", name: "breakfast"})
+                    +checkbox-btn({text: "Письменный стол", name: "table", checked: true})
+                    +checkbox-btn({text: "Стул для кормления", name: "chair", checked: true})
+                    +checkbox-btn({text: "Кроватка", name: "bed", checked: true})
+                    +checkbox-btn({text: "Телевизор", name: "tv"})
+                    +checkbox-btn({text: "Шампунь", name: "shampoo"})
+                    +checkbox-btn({text: "Телевизор", name: "tv0"})
+                    +checkbox-btn({text: "Шампунь", name: "shampoo0"})
+                +expand-checklist({title: "expandable checkbox list", id: "expandChecklist2", expand: true})
+                    +checkbox-btn({text: "Завтрак", name: "breakfast1"})
+                    +checkbox-btn({text: "Письменный стол", name: "table1", checked: true})
+                    +checkbox-btn({text: "Стул для кормления", name: "chair1", checked: true})
+                    +checkbox-btn({text: "Кроватка", name: "bed1", checked: true})
+                    +checkbox-btn({text: "Телевизор", name: "tv1"})
+                    +checkbox-btn({text: "Шампунь", name: "shampoo1"})
+                    +checkbox-btn({text: "Телевизор", name: "tv2"})
+                    +checkbox-btn({text: "Шампунь", name: "shampoo2"})
+            .main-wrapper__item
+                +field-wrapper({name: "rich Checkbox Buttons", highBottom: true})
+                    +checkbox-btn({text: "Широкий коридор", name: "rich-1", description: "Ширина коридоров в номере не менее 91 см."})
+                    +checkbox-btn({text: "Помощник для инвалидов", name: "rich-2", description: "На 1 этаже вас встретит специалист  и проводит до номера."})
+            .main-wrapper__item
+                +field-wrapper({name: "bullet list"})
+                    +bullet()
+                        +bulletItem({text: "Нельзя с питомцами"})
+                        +bulletItem({text: "Без вечеринок и мероприятий"})
+                        +bulletItem({text: "Время прибытия — после 13:00, а выезд до 12:00"})
+            .main-wrapper__item
+                +iconTextList()
+                    +iconTextListItem({icon: "insert_emoticon", title: "Комфорт", description: "Шумопоглощающие стены"})
+                    +iconTextListItem({icon: "location_city", title: "Удобство", description: "Окно в каждой из спален"})
+
+            +comment({name: "Мурад Сарафанов", time: "5 дней назад", img: "murad.png", text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+                +like-btn({likes: 12, liked: true})

@@ -7,7 +7,7 @@
 html {
   line-height: $mainLineHeight;
 	font-size: $mainFontSize;
-	color: $mainFontColor;
+	color:  $dark-75-color;
   height: 100%;
   @media screen and (max-width: $desktopWidth) {
 		font-size: 16px;
@@ -62,3 +62,8 @@ section, .section {
 @import "../../components/blocks/like-btn/like-btn.scss";
 @import "../../components/blocks/range-slider/range-slider.scss";
 @import "../../components/blocks/link/link.scss";
+@import "../../components/blocks/pagination/pagination.scss";
+@import "../../components/blocks/expand-checklist/expand-checklist.scss";
+@import "../../components/blocks/bullet/bullet.scss";
+@import "../../components/blocks/icon-text-list/icon-text-list.scss";
+@import "../../components/blocks/comment/comment.scss";

@@ -1,0 +1,40 @@
+.expand-checklist {
+    &__head {
+        position: relative;
+    }
+    &__title {
+        position: relative;
+        padding: 15px 0;
+        font-family: $mainFont;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: $dark-color;
+    }
+    &__more {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 44px;
+        width: 44px;
+        width: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Material Icons;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 24px;
+        text-transform: none;
+        cursor: pointer;
+    }
+    &__list {
+        height: 0;
+        overflow: hidden;
+        &_expand {
+            height: auto;
+        }
+    }
+}
