@@ -1,6 +1,6 @@
 mixin radio-btn(options)
-    .radio-btn
-        input(class="radio-btn__radio" type="radio" name=`${options.name}` id=`${options.id}`)
+    div(class="radio-btn")
+        input(class="radio-btn__radio" type="radio" name=`${options.name}` id=`${options.id}` checked=options.active)
         label(class="radio-btn__label" for=`${options.id}`)= options.text
 
 mixin radio-btn-container(options)

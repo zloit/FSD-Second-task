@@ -13,11 +13,15 @@
         border-color: $dark-50-color;
     }
     &__selection {
+        position: relative;
         font-family: 'Montserrat';
         font-weight: normal;
         font-size: 14px;
         line-height: 18px;
         color: $dark-75-color;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__turn {
         font-family: 'Material Icons';

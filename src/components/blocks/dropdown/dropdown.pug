@@ -1,5 +1,7 @@
 mixin dropdown(options)
-    .dropdown
+    -let dropdownCls = "dropdown"
+    -dropdownCls += options.expand ? " dropdown__menu-open" : ""
+    div(class=dropdownCls data-display=`${options.display}`)
         p.dropdown__selection= options.text
         i.dropdown__turn expand_more
         .dropdown__menu
@@ -10,5 +12,9 @@ mixin dropdown(options)
 
 mixin dropdown-option(options)
     .dropdown__option(data-id=`${options.id}`)
-        div
+        div(class="dropdown__content")
             p.dropdown__item= options.item
+        .dropdown__controls
+            button(class="dropdown__btn-decrement dropdown__forbid") -
+            span.dropdown__counter 0
+            button.dropdown__btn-increment +

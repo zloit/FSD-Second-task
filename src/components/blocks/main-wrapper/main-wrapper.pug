@@ -1,0 +1,9 @@
+mixin mainWrapper()
+    .main-wrapper
+            block
+
+mixin mainWrapperItem(options)
+    -let Cls = "main-wrapper__item"
+    -Cls += options.margin ? " main-wrapper__item_margin" : ""
+    div(class=Cls)
+        block

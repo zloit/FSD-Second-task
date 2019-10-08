@@ -10,4 +10,7 @@
     display: flex;
     flex-flow: column wrap;
     margin-bottom: 100px;
+    &_margin {
+        margin-bottom: 200px;
+    }
 }

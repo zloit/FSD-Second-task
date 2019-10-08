@@ -1,135 +1,118 @@
-// https://github.com/reservamos/item-quantity-dropdown
+(function () {
 
-(function ($) {
-    const defaults = {
-      maxItems: Infinity,
-      minItems: 0,
-      controls: {
-        position: 'right',
-        displayCls: 'dropdown__content',
-        controlsCls: 'dropdown__controls',
-        counterCls: 'dropdown__counter',
-      },
-      items: {},
-      onChange: () => {},
-      beforeDecrement: () => true,
-      beforeIncrement: () => true,
-    };
-  
-    $.fn.dropdown = function (options) {
-      this.each(function () {
-        const $this = $(this);
-        const $selection = $this.find('p.dropdown__selection').last();
-        const $menu = $this.find('div.dropdown__menu');
-        const $items = $menu.find('div.dropdown__option');
-        const settings = $.extend(true, {}, defaults, options);
-        const itemCount = {};
-        let totalItems = 0;
-  
-        function updateDisplay () {
-          let forms = 'гость,гостя,гостей'.split(',');
-          let x10 = totalItems % 10, x100 = totalItems % 100, form = 2 // гостей
-          if (x10 == 1 && x100 != 11)
-            form = 0 // гость
-          else if (x10 > 1 && x10 < 5 && (x100 < 10 || x100 > 21))
-            form = 1 // гостя
-          $selection.html(`${totalItems} ${forms[form]}`);
-        }
-  
-        function setItemSettings (id, $item) {
-          const minCount = Number($item.data('mincount'));
-          const maxCount = Number($item.data('maxcount'));
-  
-          settings.items[id] = {
-            minCount: Number.isNaN(Number(minCount)) ? 0 : minCount,
-            maxCount: Number.isNaN(Number(maxCount)) ? Infinity : maxCount,
-          };
-        }
-  
-        function addControls (id, $item) {
-          const $controls = $('<div />').addClass(settings.controls.controlsCls);
-          const $decrementButton = $(`
-            <button class="dropdown__btn-decrement dropdown__forbid">-</button>
-          `);
-          const $incrementButton = $(`
-            <button class="dropdown__btn-increment">+</i>
-            </button>
-          `);
-          const $counter = $(`<span>${itemCount[id]}</span>`).addClass(settings.controls.counterCls);
-  
-          $item.children('div').addClass(settings.controls.displayCls);
-          $controls.append($decrementButton, $counter, $incrementButton);
-  
-          if (settings.controls.position === 'right') {
-            $item.append($controls);
-          } else {
-            $item.prepend($controls);
-          }
-  
-          $decrementButton.click((event) => {
-            const { items, minItems, beforeDecrement, onChange } = settings;
-            const allowClick = beforeDecrement(id, itemCount);
-  
-            if (allowClick && totalItems > minItems && itemCount[id] > items[id].minCount) {
-              itemCount[id] -= 1;
-              totalItems -= 1;
-              $counter.html(itemCount[id]);
-              updateDisplay();
-              onChange(id, itemCount[id], totalItems);
-              if (itemCount[id] == 0) {
-                $decrementButton.addClass('dropdown__forbid');
-              }
-            }
-            
-            event.preventDefault();
-          });
-  
-          $incrementButton.click((event) => {
-            const { items, maxItems, beforeIncrement, onChange } = settings;
-            const allowClick = beforeIncrement(id, itemCount);
+  function i18n(forms,count) {
+      let x10 = count % 10, 
+          x100 = count % 100, 
+          form = 2 // гостей
+      if (x10 == 1 && x100 != 11)
+        form = 0; // гость
+      else if (x10 > 1 && x10 < 5 && (x100 < 10 || x100 > 21))
+        form = 1; // гостя
+      return forms[form];
+  }
 
-            if (allowClick && totalItems < maxItems && itemCount[id] < items[id].maxCount) {
-              itemCount[id] += 1;
-              totalItems += 1;
-              $counter.html(itemCount[id]);
-              updateDisplay();
-              onChange(id, itemCount[id], totalItems);
-              if (itemCount[id] > 0) {
-                $decrementButton.removeClass('dropdown__forbid');
-              }
-            }
-  
-            event.preventDefault();
-          });
-  
-          $item.click(event => event.stopPropagation());
-  
-          return $item;
-        }
-  
-        $this.click(() => {
-          $this.toggleClass('dropdown__menu-open');
-        });
-  
-        $items.each(function () {
-          const $item = $(this);
-          const id = $item.data('id');
-          const defaultCount = Number($item.data('defaultcount') || '0');
-  
-          itemCount[id] = defaultCount;
-          totalItems += defaultCount;
-          setItemSettings(id, $item);
-          addControls(id, $item);
-        });
-  
-        //updateDisplay();
-      });
-  
-      return this;
-    };
-  }(jQuery));
+  function updateDisplay(elem) {
+    const dropdown = elem.closest('div.dropdown');
+    const selection = dropdown.getElementsByClassName('dropdown__selection')[0];
+    const option = dropdown.getElementsByClassName('dropdown__option');
+    if (dropdown.dataset.display == 'summation') { // Для перечисления
+      let totalItems=0;
+      for (let i = 0; i < option.length; i++) {
+        totalItems += +option[i].getElementsByClassName('dropdown__counter')[0].innerHTML;
+      }
 
-$(document).ready(() => {
-    $('.dropdown').dropdown({
+      let forms = ['гость','гостя','гостей'];
+
+      selection.innerHTML = `${totalItems} ${i18n(forms,totalItems)}`;
+    } else if (dropdown.dataset.display == 'listing') {
+      let forms = [
+        ['спальня','спальни','спален'],
+        ['кровать','кровати','кроватей'],
+        ['ванная комната','ванные комнаты','ванных комнат']
+      ]
+      let selectionText = '';
+      let items = [];
+      for (let i = 0; i < option.length; i++) {
+        const count = +option[i].getElementsByClassName('dropdown__counter')[0].innerHTML;
+        if (count != 0) items.push(`${count} ${i18n(forms[i],count)}`);
+      }
+
+      switch (items.length) {
+        case 0:
+          selection.innerHTML = '';
+          break;
+        case 1:
+          selection.innerHTML = items[0];
+          break;
+        case 2:
+          selection.innerHTML = items[0] + ", " + items[1];
+          break;
+        case 3:
+          selection.innerHTML = items[0] + ", " + items[1] + "..."
+          break;
+      }
+    }
+  }
+  
+
+
+  document.addEventListener('click', function(event) {
+
+    // Open & Close
+    if (event.target.closest('div').dataset.display != undefined) {
+      const currentDropdown = event.target.closest('div');
+      currentDropdown.classList.toggle('dropdown__menu-open');
+      return;
+    }
+    // Decrement
+    if (event.target.closest('button.dropdown__btn-decrement') != undefined) {
+      const btn = event.target.closest('button.dropdown__btn-decrement');
+      const count = btn.nextElementSibling;
+      if (count.innerHTML>1) {
+        count.innerHTML = +count.innerHTML - 1;
+      } else if (count.innerHTML==1) {
+        count.innerHTML = +count.innerHTML - 1;
+        btn.classList.add('dropdown__forbid')
+      }
+      updateDisplay(event.target);
+      return;
+    }
+    // Increment
+    if (event.target.closest('button.dropdown__btn-increment') != undefined) {
+      const count = event.target.previousSibling;
+      const btn = count.previousSibling;
+      if (count.innerHTML==0) {
+        btn.classList.remove('dropdown__forbid');
+      } 
+      count.innerHTML = +count.innerHTML + 1;
+      updateDisplay(event.target);
+      return;
+    }
+    // Применить
+    if (event.target.closest('button.dropdown__apply') != undefined) {
+      event.target.closest('div.dropdown').classList.toggle('dropdown__menu-open');
+    }
+    // Очистить
+    if (event.target.closest('button.dropdown__clear') != undefined) {
+      
+      const option = event.target.closest('div.dropdown').getElementsByClassName('dropdown__option');
+      
+      for (let i = 0; i < option.length; i++) {
+        option[i].getElementsByClassName('dropdown__counter')[0].innerHTML = 0;
+        option[i].getElementsByClassName('dropdown__btn-decrement')[0].classList.add('dropdown__forbid');
+      }
+      updateDisplay(event.target);
+    }
+  });
+
+  jQuery(function($){
+    $(document).mouseup(function (e){ // событие клика по веб-документу
+      var div = $(".dropdown"); // тут указываем ID элемента
+      if (!div.is(e.target) // если клик был не по нашему блоку
+          && div.has(e.target).length === 0) { // и не по его дочерним элементам
+        div.removeClass('dropdown__menu-open'); // скрываем его
+      }
     });
   });
+
+}())
