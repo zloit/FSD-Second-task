@@ -1,3 +1,45 @@
+- let inputClassName = "date-picker"
+
+mixin date-input(options)
+    input(
+        type="text"
+        class=inputClassName
+        id="date-input"
+        placeholder=`${options.placeholder}`
+        value=options.value
+    )
+
+mixin date-filter(options)
+    div.date-picker__filter
+        input(
+            type="text"
+            class="date-picker"
+            value=options.value
+            readonly
+        )
+        i.date-picker__turn expand_more
+
 mixin date-picker(options)
-    - var inputClassName = "date-picker"
-        input(class=inputClassName, placeholder=`${options.placeholder}`,value=options.value)
+    div(class="date-picker__container")
+        .date-picker__item
+            label.date-picker__label= options.nameStart
+            div
+                input(
+                    type="text"
+                    class="date-picker"
+                    id="date-picker-start"
+                    value=options.start
+                    readonly
+                )
+                i.date-picker__turn expand_more
+        .date-picker__item
+            label.date-picker__label= options.nameEnd
+            div
+                input(
+                    type="text"
+                    class="date-picker"
+                    id="date-picker-end"
+                    value=options.end
+                    readonly
+                )
+                i.date-picker__turn expand_more

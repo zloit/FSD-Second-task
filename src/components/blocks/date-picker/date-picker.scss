@@ -1,5 +1,14 @@
+@import "src/components/blocks/date-picker/src/_datepicker-config.scss";
+@import "src/components/blocks/date-picker/src/cell.scss";
+@import "src/components/blocks/date-picker/src/datepicker.scss";
+@import "src/components/blocks/date-picker/src/navigation.scss";
+@import "src/components/blocks/date-picker/src/timepicker.scss";
+
 .date-picker {
+    position: relative;
+    z-index: 1;
     padding: 9px 15px;
+    max-width: 320px;
     width: 100%;
     font-family: $mainFont;
     font-size: $mainFontSize;
@@ -7,7 +16,7 @@
     text-transform: uppercase;
     border: 1px solid $dark-25-color;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: transparent;
     color: $dark-75-color;
     transition: all 0.25s ease-out;
     &::placeholder {
@@ -16,4 +25,48 @@
     &:hover,&:focus,&_focus {
         border-color: $dark-75-color;
     }
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 30px;
+        margin-bottom: 30px;
+    }
+    &__item {
+        position: relative;
+        & .date-picker {
+            cursor: pointer;
+        }
+        &:nth-last-child(n+2) {
+            margin-right: 20px;
+        }
+    }
+    &__label {
+        font-family: $mainFont;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        color: $dark-color;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+    &__filter {
+        position: relative;
+    }
+    &__turn {
+        position: absolute;
+        z-index: 0;
+        right: 0;
+        width: 44px;
+        line-height: 44px;
+        text-align: center;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        user-select: none; 
+        font-size: 24px;
+        color: $dark-50-color;
+        cursor: pointer;
+    }
 }
+

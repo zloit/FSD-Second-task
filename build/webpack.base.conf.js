@@ -3,7 +3,7 @@ const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-var webpack = require('webpack');
+var webpack = require('webpack')
 
 // Main const
 
@@ -32,18 +32,18 @@ module.exports = {
     path: PATHS.dist,
     //publicPath: '/'
   },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          name: 'vendors',
-          test: /node_modules/,
-          chunks: 'all',
-          enforce: true
-        }
-      }
-    }
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       vendor: {
+  //         name: 'vendors',
+  //         test: /node_modules/,
+  //         chunks: 'all',
+  //         enforce: true
+  //       }
+  //     }
+  //   }
+  // },
   module: {
     rules: [{
       test: /\.pug$/,
