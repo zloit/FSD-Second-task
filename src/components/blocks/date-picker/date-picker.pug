@@ -14,6 +14,7 @@ mixin date-filter(options)
         input(
             type="text"
             class="date-picker"
+            id=options.id
             value=options.value
             readonly
         )
@@ -27,7 +28,7 @@ mixin date-picker(options)
                 input(
                     type="text"
                     class="date-picker"
-                    id="date-picker-start"
+                    id=options.idstart
                     value=options.start
                     readonly
                 )
@@ -38,7 +39,7 @@ mixin date-picker(options)
                 input(
                     type="text"
                     class="date-picker"
-                    id="date-picker-end"
+                    id=options.idend
                     value=options.end
                     readonly
                 )

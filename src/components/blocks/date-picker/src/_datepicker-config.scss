@@ -47,15 +47,15 @@ $datepickerTransitionOffset: 8px !default;
 
 // Objects
 %otherMonth {
-  color: map_get($datepickerTextColor, otherMonth);
+  color: rgba(31, 32, 65, 0.25);
 
   &:hover {
-    color: darken(map_get($datepickerTextColor, otherMonth), 10);
+    color: #fff;
   }
 
   &.-disabled- {
     &.-focus- {
-      color: map_get($datepickerTextColor, otherMonth);
+      color: #fff;
     }
   }
 

@@ -13,7 +13,6 @@
     font-family: $mainFont;
     font-size: $mainFontSize;
     line-height: 24px;
-    text-transform: uppercase;
     border: 1px solid $dark-25-color;
     border-radius: 4px;
     background-color: transparent;
@@ -21,6 +20,7 @@
     transition: all 0.25s ease-out;
     &::placeholder {
         color: $dark-25-color;
+        text-transform: uppercase;
     }
     &:hover,&:focus,&_focus {
         border-color: $dark-75-color;

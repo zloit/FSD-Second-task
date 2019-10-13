@@ -10,6 +10,8 @@
             '<div class="datepicker--content"></div>' +
             '</div>',
         defaults = {
+            rangeEnd: undefined,
+            mask: 'ДД.ММ.ГГГГ',
             classes: '',
             inline: false,
             language: 'ru',
@@ -587,6 +589,10 @@
             }
         },
 
+        close: function () {
+            this.hide();
+        },
+
         clear: function () {
             this.selectedDates = [];
             this.minRange = '';
@@ -695,6 +701,12 @@
 
             value = value.join(this.opts.multipleDatesSeparator);
 
+            if (_this.selectedDates.length == 0) {
+                value = this.opts.mask;
+                if (this.opts.rangeEnd != undefined) {
+                    this.opts.rangeEnd.val(value);
+                }
+            }
             this.$el.val(value)
         },
 
@@ -1476,9 +1488,10 @@
             daysShort: ['Вос','Пон','Вто','Сре','Чет','Пят','Суб'],
             daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
             months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-            monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+            monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
             today: 'Сегодня',
             clear: 'Очистить',
+            close: 'Применить',
             dateFormat: 'dd.mm.yyyy',
             timeFormat: 'hh:ii',
             firstDay: 1
@@ -1847,6 +1860,9 @@
             }
             if (this.opts.clearButton) {
                 this._addButton('clear')
+            }
+            if (this.opts.clearButton) {
+                this._addButton('close')
             }
         },
 

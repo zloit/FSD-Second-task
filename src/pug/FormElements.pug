@@ -41,9 +41,9 @@ html(lang="en")
                         +dropdown-option({item: "Младенцы",id: "item3"})
                 +field-wrapper({name: "Masked text field", status: "default"})
                     +date-input({placeholder: "ДД.ММ.ГГГГ"})
-                +date-picker({nameStart: "Date dropdown", start: "ДД.ММ.ГГГГ", nameEnd: "Date dropdown", end: "19.08.2019"})
+                +date-picker({nameStart: "Date dropdown", idstart: "date-picker-start", nameEnd: "Date dropdown", idend: "date-picker-end"})
                 +field-wrapper({name: "Filter date dropdown", tight: true})
-                    +date-filter({value: "19 авг - 23 авг"})
+                    +date-filter({id: "date-filter"})
                 +field-wrapper({name: "Subscription text field", tight: true})
                     +subs-field({placeholder: "Email"})
             +mainWrapperItem({})
@@ -137,119 +137,3 @@ html(lang="en")
 
             +comment({name: "Мурад Сарафанов", time: "5 дней назад", img: "murad.png", text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
                 +like-btn({likes: 12, liked: true})
-        <div class="datepickers-container" >
-    <div class="datepicker -bottom-left- -from-bottom- active" style="left: 150px; top: 581px;">
-        <nav class="datepicker--nav">
-            <div class="datepicker--nav-action" data-action="prev">arrow_back</div>
-            <div class="datepicker--nav-title">Август 2019</div>
-            <div class="datepicker--nav-action" data-action="next">arrow_forward</div>
-        </nav>
-        <div class="datepicker--content">
-            <div class="datepicker--days datepicker--body active">
-                <div class="datepicker--days-names">
-                    <div class="datepicker--day-name">Пн</div>
-                    <div class="datepicker--day-name">Вт</div>
-                    <div class="datepicker--day-name">Ср</div>
-                    <div class="datepicker--day-name">Чт</div>
-                    <div class="datepicker--day-name">Пт</div>
-                    <div class="datepicker--day-name -weekend-">Сб</div>
-                    <div class="datepicker--day-name -weekend-">Вс</div>
-                </div>
-                <div class="datepicker--cells datepicker--cells-days">
-                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="29" data-month="6" data-year="2019">29</div>
-                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="30" data-month="6" data-year="2019">30</div>
-                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="31" data-month="6" data-year="2019">31</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="1" data-month="7" data-year="2019">1</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="2" data-month="7" data-year="2019">2</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="3" data-month="7" data-year="2019">3</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="4" data-month="7" data-year="2019">4</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="5" data-month="7" data-year="2019">5</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="6" data-month="7" data-year="2019">6</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="7" data-month="7" data-year="2019">7</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="8" data-month="7" data-year="2019">8</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="9" data-month="7" data-year="2019">9</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="10" data-month="7" data-year="2019">10</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="11" data-month="7" data-year="2019">11</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="12" data-month="7" data-year="2019">12</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="13" data-month="7" data-year="2019">13</div>
-                    <div class="datepicker--cell datepicker--cell-day -range-from-" data-date="14" data-month="7" data-year="2019">14</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="15" data-month="7" data-year="2019">15</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="16" data-month="7" data-year="2019">16</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="17" data-month="7" data-year="2019">17</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="18" data-month="7" data-year="2019">18</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="19" data-month="7" data-year="2019">19</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="20" data-month="7" data-year="2019">20</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="21" data-month="7" data-year="2019">21</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="22" data-month="7" data-year="2019">22</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="23" data-month="7" data-year="2019">23</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="24" data-month="7" data-year="2019">24</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="25" data-month="7" data-year="2019">25</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="26" data-month="7" data-year="2019">26</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="27" data-month="7" data-year="2019">27</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="28" data-month="7" data-year="2019">28</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="29" data-month="7" data-year="2019">29</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="30" data-month="7" data-year="2019">30</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="31" data-month="7" data-year="2019">31</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend- -other-month-" data-date="1" data-month="8" data-year="2019">1</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="datepicker -bottom-left- -from-bottom-">
-        <nav class="datepicker--nav">
-            <div class="datepicker--nav-action" data-action="prev">arrow_back</div>
-            <div class="datepicker--nav-title">Октябрь, <i>2019</i></div>
-            <div class="datepicker--nav-action" data-action="next">arrow_forward</div>
-        </nav>
-        <div class="datepicker--content">
-            <div class="datepicker--days datepicker--body active">
-                <div class="datepicker--days-names">
-                    <div class="datepicker--day-name">Пн</div>
-                    <div class="datepicker--day-name">Вт</div>
-                    <div class="datepicker--day-name">Ср</div>
-                    <div class="datepicker--day-name">Чт</div>
-                    <div class="datepicker--day-name">Пт</div>
-                    <div class="datepicker--day-name -weekend-">Сб</div>
-                    <div class="datepicker--day-name -weekend-">Вс</div>
-                </div>
-                <div class="datepicker--cells datepicker--cells-days">
-                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="30" data-month="8" data-year="2019">30</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="1" data-month="9" data-year="2019">1</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="2" data-month="9" data-year="2019">2</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="3" data-month="9" data-year="2019">3</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="4" data-month="9" data-year="2019">4</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="5" data-month="9" data-year="2019">5</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="6" data-month="9" data-year="2019">6</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="7" data-month="9" data-year="2019">7</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="8" data-month="9" data-year="2019">8</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="9" data-month="9" data-year="2019">9</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="10" data-month="9" data-year="2019">10</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="11" data-month="9" data-year="2019">11</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend- -current-" data-date="12" data-month="9" data-year="2019">12</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="13" data-month="9" data-year="2019">13</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="14" data-month="9" data-year="2019">14</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="15" data-month="9" data-year="2019">15</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="16" data-month="9" data-year="2019">16</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="17" data-month="9" data-year="2019">17</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="18" data-month="9" data-year="2019">18</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="19" data-month="9" data-year="2019">19</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="20" data-month="9" data-year="2019">20</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="21" data-month="9" data-year="2019">21</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="22" data-month="9" data-year="2019">22</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="23" data-month="9" data-year="2019">23</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="24" data-month="9" data-year="2019">24</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="25" data-month="9" data-year="2019">25</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="26" data-month="9" data-year="2019">26</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend-" data-date="27" data-month="9" data-year="2019">27</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="28" data-month="9" data-year="2019">28</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="29" data-month="9" data-year="2019">29</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="30" data-month="9" data-year="2019">30</div>
-                    <div class="datepicker--cell datepicker--cell-day" data-date="31" data-month="9" data-year="2019">31</div>
-                    <div class="datepicker--cell datepicker--cell-day -other-month-" data-date="1" data-month="10" data-year="2019">1</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend- -other-month-" data-date="2" data-month="10" data-year="2019">2</div>
-                    <div class="datepicker--cell datepicker--cell-day -weekend- -other-month-" data-date="3" data-month="10" data-year="2019">3</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

@@ -10,101 +10,120 @@
 }
 
 .datepicker--cell {
-  border-radius: 22px;
+  position: relative;
   box-sizing: border-box;
   cursor: pointer;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  height: $datepickerDayCellSize;
   z-index: 1;
-  
+  border-radius: 22px;
+  & span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    height: $datepickerDayCellSize;
+  }
 
-  &.-focus- {
+  &.-focus- span{
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    color: #fff;
+    color: #ffffff;
+    font-weight: bold;
   }
 
   &.-current- {
-    color: #fff;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-
-    &.-focus- {
-      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-      opacity: .75;
+    & span {
+        color: #fff;
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     }
 
     &.-in-range- {
-      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-      opacity: .75;
+      // background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      // border-radius: 24px;
+      // color: #fff;
+      & span {
+        // background: linear-gradient(180deg,rgba(188,156,255,.25),rgba(139,164,249,.25));
+        // border-radius: 0;
+      }
     }
   }
 
   &.-in-range- {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    opacity: 0.25;
+    background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
+    // opacity: 1;
     border-radius: 0;
-    color: #fff;
+    color: rgba(31, 32, 65, 0.5);
 
     &.-focus- {
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      opacity: .5;
+      // background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      // opacity: .5;
     }
   }
 
   &.-disabled- {
-    cursor: default;
-    color: map_get($datepickerTextColor, disabled);
+    // cursor: default;
+    // color: map_get($datepickerTextColor, disabled);
 
     &.-focus- {
-      color: map_get($datepickerTextColor, disabled);
+      // color: map_get($datepickerTextColor, disabled);
     }
 
     &.-in-range- {
-      color: darken(map_get($datepickerTextColor, disabled), 5);
+      // color: darken(map_get($datepickerTextColor, disabled), 5);
     }
 
     &.-current- {
       &.-focus- {
-        color: map_get($datepickerTextColor, disabled);
+        // color: map_get($datepickerTextColor, disabled);
       }
     }
   }
 
   &.-range-from- {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
     border-radius: 24px 0 0 24px;
     color: #fff;
+    span {
+      border-radius: 24px;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+    &.-selected- {
+      // background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
+    }
   }
   &.-range-to- {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
     border-radius:  0 24px 24px 0;
     color: #fff;
+    span {
+      border-radius: 24px;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+    &.-selected- {
+      // background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
+    }
   }
 
   &.-range-from-.-range-to- {
     border-radius: 22px;
   }
 
-  &.-selected- {
+  &.-selected-  span{
     color: #fff;
-    border: none;
+    // border: none;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     font-weight: bold;
 
     &.-current- {
-      color: #fff;
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      // color: #fff;
+      // background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     }
 
     &.-focus- {
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      // background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
     }
   }
 
   &:empty {
-    cursor: default;
+    // cursor: default;
   }
 }
 
