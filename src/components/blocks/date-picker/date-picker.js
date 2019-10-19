@@ -8,45 +8,8 @@ jQuery(function($){
 // Date picker
 
 import './src/datepicker';
-	
-	let $start = $('#date-picker-start');
-	let $end = $('#date-picker-end')
-	let $dateFilter = $('#date-filter')
-	
 
-$start.datepicker({
-	rangeEnd: $end,
-	range: true,
-	// inline: true,
-	clearButton: true,
-	onRenderCell: function(date,cellType) {
-		let item;
-		switch (cellType) {
-			case 'day':
-				item = date.getDate();
-				break;
-			case 'month':
-				item = date.getMonth()+1;
-				break;
-			case 'year':
-				item = date.getFullYear();
-				break;
-		}
-		return {html: '<span>'+item+'</span>'}
-	},
-	onSelect: function (fd) {
-		const date = fd.split(',');
-		if (date[0] != '') {
-			$start.val(date[0]);
-			if (date.length > 1) 
-				$end.val(date[1]);
-		}
-	}
-});
-
-$end.click(function(){
-	$start.datepicker().data('datepicker').show();
-  });
+let $dateFilter = $('#date-filter')
 
 $dateFilter.datepicker({
 	mask: 'Диапазон',
@@ -60,4 +23,30 @@ $dateFilter.datepicker({
 	}
 });
 $dateFilter.datepicker().data('datepicker').update();
-$start.datepicker().data('datepicker').update();
+
+let $start = $('#date-picker-start');
+let $end = $('#date-picker-end')
+
+if (($start != undefined)||($end != undefined)) {
+	$start.datepicker({
+		rangeEnd: $end,
+		range: true,
+		// inline: true,
+		clearButton: true,
+		onSelect: function (fd) {
+			const date = fd.split(',');
+			if (date[0] != '') {
+				$start.val(date[0]);
+				if (date.length > 1) 
+					$end.val(date[1]);
+			}
+		}
+	});
+	
+	$start.datepicker().data('datepicker').update();
+	
+	$end.click(function(){
+		$start.datepicker().data('datepicker').show();
+	  });
+}
+

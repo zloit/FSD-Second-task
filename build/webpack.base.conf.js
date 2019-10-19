@@ -99,7 +99,8 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       $: "jquery",
-      jQuery: "jquery"
+      jQuery: "jquery",
+      noUiSlider: 'nouislider'
     }),
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].css`,

@@ -10,95 +10,85 @@
 }
 
 .datepicker--cell {
-  position: relative;
+  position: relative;  
   box-sizing: border-box;
   cursor: pointer;
   z-index: 1;
-  border-radius: 22px;
-  & span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $datepickerDayCellSize;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
     border-radius: 22px;
-    height: $datepickerDayCellSize;
+    z-index: -1;
   }
-
-  &.-focus- span{
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  
+  
+  &.-focus-{
     color: #ffffff;
     font-weight: bold;
+    &::before {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
   }
 
   &.-current- {
-    & span {
-        color: #fff;
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    }
-
-    &.-in-range- {
-      // background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-      // border-radius: 24px;
-      // color: #fff;
-      & span {
-        // background: linear-gradient(180deg,rgba(188,156,255,.25),rgba(139,164,249,.25));
-        // border-radius: 0;
-      }
+    color: #fff;
+    font-weight: bold;
+    &::before {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     }
   }
 
   &.-in-range- {
-    background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
-    // opacity: 1;
-    border-radius: 0;
-    color: rgba(31, 32, 65, 0.5);
-
+    background: linear-gradient(180deg,rgba(188, 156, 255, .25),rgba(139, 164, 249, .25));
     &.-focus- {
-      // background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      // opacity: .5;
+      opacity: .75;
     }
   }
 
-  &.-disabled- {
-    // cursor: default;
-    // color: map_get($datepickerTextColor, disabled);
+  // &.-disabled- {
+  //   // cursor: default;
+  //   // color: map_get($datepickerTextColor, disabled);
 
-    &.-focus- {
-      // color: map_get($datepickerTextColor, disabled);
-    }
+  //   &.-focus- {
+  //     // color: map_get($datepickerTextColor, disabled);
+  //   }
 
-    &.-in-range- {
-      // color: darken(map_get($datepickerTextColor, disabled), 5);
-    }
+  //   &.-in-range- {
+  //     // color: darken(map_get($datepickerTextColor, disabled), 5);
+  //   }
 
-    &.-current- {
-      &.-focus- {
-        // color: map_get($datepickerTextColor, disabled);
-      }
-    }
-  }
+  //   &.-current- {
+  //     &.-focus- {
+  //       // color: map_get($datepickerTextColor, disabled);
+  //     }
+  //   }
+  // }
 
   &.-range-from- {
-    background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
-    border-radius: 24px 0 0 24px;
+    background: linear-gradient(180deg,rgba(188, 156, 255, .25),rgba(139, 164, 249, .25));
+    font-weight: bold;
+    border-radius: 22px;
     color: #fff;
-    span {
-      border-radius: 24px;
+    &::before {
+      border-radius: 22px;
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    }
-    &.-selected- {
-      // background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
     }
   }
   &.-range-to- {
-    background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
-    border-radius:  0 24px 24px 0;
+    background: linear-gradient(180deg,rgba(188, 156, 255, .25),rgba(139, 164, 249, .25));
+    border-radius:  0 22px 22px 0;
+    font-weight: bold;
     color: #fff;
-    span {
-      border-radius: 24px;
+    &::before {
+      border-radius: 22px;
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    }
-    &.-selected- {
-      // background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
     }
   }
 
@@ -108,22 +98,12 @@
 
   &.-selected-  span{
     color: #fff;
-    // border: none;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     font-weight: bold;
-
-    &.-current- {
-      // color: #fff;
-      // background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    }
-
-    &.-focus- {
-      // background: linear-gradient(180deg,rgba(188, 156, 255, 0.25),rgba(139, 164, 249, 0.25));
-    }
   }
 
   &:empty {
-    // cursor: default;
+    cursor: default;
   }
 }
 
@@ -161,8 +141,6 @@
 
 //  Months
 // -------------------------------------------------
-
-.datepicker--months {}
 
 .datepicker--cells-months {
   height: $datepickerMinBodyHeight;

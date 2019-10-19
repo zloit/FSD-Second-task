@@ -15,22 +15,25 @@
     const dropdown = elem.closest('div.dropdown');
     const selection = dropdown.getElementsByClassName('dropdown__selection')[0];
     const option = dropdown.getElementsByClassName('dropdown__option');
-    if (dropdown.dataset.display == 'summation') { // Для перечисления
+    if (dropdown.dataset.display == 'summation') { // Для суммы
       let totalItems=0;
       for (let i = 0; i < option.length; i++) {
         totalItems += +option[i].getElementsByClassName('dropdown__counter')[0].innerHTML;
       }
 
-      let forms = ['гость','гостя','гостей'];
+      const forms = ['гость','гостя','гостей'];
 
-      selection.innerHTML = `${totalItems} ${i18n(forms,totalItems)}`;
-    } else if (dropdown.dataset.display == 'listing') {
-      let forms = [
+      if (totalItems != 0) {
+        selection.innerHTML = `${totalItems} ${i18n(forms,totalItems)}`;
+      } else {
+        selection.innerHTML = "Сколько гостей";
+      }
+    } else if (dropdown.dataset.display == 'listing') {  // Для перечисление
+      const forms = [
         ['спальня','спальни','спален'],
         ['кровать','кровати','кроватей'],
         ['ванная комната','ванные комнаты','ванных комнат']
       ]
-      let selectionText = '';
       let items = [];
       for (let i = 0; i < option.length; i++) {
         const count = +option[i].getElementsByClassName('dropdown__counter')[0].innerHTML;
@@ -39,7 +42,7 @@
 
       switch (items.length) {
         case 0:
-          selection.innerHTML = '';
+          selection.innerHTML = 'Какие удобства';
           break;
         case 1:
           selection.innerHTML = items[0];

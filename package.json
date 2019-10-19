@@ -39,7 +39,6 @@
   },
   "dependencies": {
     "lodash": "^4.17.15",
-    "vue": "^2.6.10"
-  },
-  "homepage": "https://github.com/vedees/webpack-template#readme"
+    "nouislider": "^14.0.3"
+  }
 }
