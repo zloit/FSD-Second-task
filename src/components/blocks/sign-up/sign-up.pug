@@ -1,0 +1,25 @@
+include ..\card\card.pug
+include ..\date-picker\date-picker.pug
+include ..\link\link.pug
+include ..\field-wrapper\field-wrapper.pug
+include ..\radio-btn\radio-btn.pug
+include ..\text-field\text-field.pug
+include ..\toggle\toggle.pug
+include ..\offer\offer.pug
+
+mixin sign-up(options)
+    +card()
+        h1= options.title
+        +text-field({placeholder: "Имя",nametag: "firstname"})
+        +text-field({placeholder: "Фамилия",nametag: "lastname"})
+        +radio-btn-container()
+            +radio-btn({text: "Мужчина", name: "sex", id: "men", active: true})
+            +radio-btn({text: "Женщина", name: "sex", id: "women"})
+        +field-wrapper({name: "Дата рождения"})
+            +date-input({placeholder: "ДД.ММ.ГГГГ"})
+        +field-wrapper({name: "Данные для входа в сервис"})
+            +text-field({placeholder: "Email",nametag: "email", type: "email"})
+            +text-field({placeholder: "Пароль",nametag: "password", type: "password"})
+            +toggle({text:"Получать спецпредложения"})
+        +link({text: "Перейти к оплате", bigBtn: true})
+        +offer({text: "Уже есть аккаунт на Toxin?", btn: "Войти", link: "#"})

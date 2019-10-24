@@ -1,0 +1,13 @@
+include ..\card\card.pug
+include ..\link\link.pug
+include ..\field-wrapper\field-wrapper.pug
+include ..\text-field\text-field.pug
+include ..\offer\offer.pug
+
+mixin sign-in(options)
+    +card()
+        h1 Войти
+        +text-field({placeholder: "Email",nametag: "email", type: "email"})
+        +text-field({placeholder: "Пароль",nametag: "password", type: "password"})
+        +link({text: "Войти", bigBtn: true})
+        +offer({text: "Нет аккаунта на Toxin?", btn: "Создать", link: "#"})

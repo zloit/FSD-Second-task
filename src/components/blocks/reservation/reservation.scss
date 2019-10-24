@@ -1,0 +1,52 @@
+.reservation {
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    &__price {
+        font-weight: bold;
+        line-height: 18px;
+        color: $dark-50-color;
+        &:after {
+            content: " в сутки";
+            position: relative;
+            font-weight: normal;
+            font-size: 11px;
+        }
+    }
+    &__room {
+        &::before {
+            content: "№ ";
+            font-size: 14px;
+        }
+        font-family: Quicksand;
+        color: $dark-color;
+        font-weight: bold;
+        line-height: 17px;
+        font-size: 22px;
+        & span{
+            font-family: $mainFont;
+            padding-left: 5px;
+            font-size: 12px;
+            line-height: 15px;
+            color: $purple-color;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+    }
+}
+
+.services {
+    // display: flex;
+    &__service{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__name {
+
+    }
+    &__price {
+
+    }
+}

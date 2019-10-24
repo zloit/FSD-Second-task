@@ -1,0 +1,9 @@
+.offer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    &__text {
+        color: #000000;
+    }
+}

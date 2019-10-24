@@ -1,11 +1,12 @@
 .dropdown {
     position: relative;
-	display: flex;
+    margin-bottom: 10px;
+    display: flex;
 	flex-basis: 100%;
 	justify-content: space-between;
 	padding: 12px 9px 12px 15px;
     align-items: center;
-	border: 1px solid #E2E2E2;
+	border: 1px solid rgba(31, 32, 65, 0.25);
 	border-radius: 4px;
     cursor: pointer;
     transition: .5s;
@@ -64,6 +65,7 @@
         line-height: 18px;
         text-transform: uppercase;
         background-color: #fff;
+        color: $dark-color;
     }
     &__apply,&__clear {
         background-color: #fff;

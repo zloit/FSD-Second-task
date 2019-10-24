@@ -7,7 +7,6 @@
 html {
   line-height: $mainLineHeight;
 	font-size: $mainFontSize;
-	color:  $dark-75-color;
   height: 100%;
   @media screen and (max-width: $desktopWidth) {
 		font-size: 16px;
@@ -24,23 +23,43 @@ body {
   font-family: $mainFont;
 	font-size: $mainFontSize;
   font-weight: $mainFontWeight;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Montserrat;
+  font-style: normal;
+  line-height: 24px;
+  color:  $dark-75-color;
 }
 
-section, .section {
-  position: relative;
-  padding: 40px 0;
-  @media screen and (max-width: $desktopWidth) {
-    padding: 36px 0;
-  }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 28px 0;
-  }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 20px 0;
-  }
+h1 {
+  margin-bottom: 20px;
+  font-family: Quicksand,Montserrat;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color:  $dark-color;
+  letter-spacing: -0.5px;
 }
+
+h2 {
+  font-family: Quicksand,Montserrat;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color:  $dark-color;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color:  $dark-color;
+}
+
+.greybg {
+  background: #E5E5E5;
+}
+
 
 // Modules
 @import "../../components/blocks/logo/logo.scss";
@@ -65,3 +84,10 @@ section, .section {
 @import "../../components/blocks/bullet/bullet.scss";
 @import "../../components/blocks/icon-text-list/icon-text-list.scss";
 @import "../../components/blocks/comment/comment.scss";
+@import "../../components/blocks/wrapper/wrapper.scss";
+@import "../../components/blocks/card/card.scss";
+@import "../../components/blocks/search/search.scss";
+@import "../../components/blocks/sign-up/sign-up.scss";
+@import "../../components/blocks/reservation/reservation.scss";
+@import "../../components/blocks/sign-in/sign-in.scss";
+@import "../../components/blocks/offer/offer.scss";

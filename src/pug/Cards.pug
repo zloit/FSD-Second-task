@@ -1,0 +1,38 @@
+include ..\components\blocks\wrapper\wrapper.pug
+include ..\components\blocks\main-wrapper\main-wrapper.pug
+include ..\components\blocks\logo\logo.pug
+include ..\components\blocks\search\search.pug
+include ..\components\blocks\sign-up\sign-up.pug
+include ..\components\blocks\reservation\reservation.pug
+include ..\components\blocks\sign-in\sign-in.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Cards
+    body.greybg
+        header
+            +wrapper()
+                +logo({})
+        +mainWrapper()
+            +mainWrapperItem({})
+                +search({title: "Найдём номера под ваши пожелания"})
+            +mainWrapperItem({})
+                +sign-up({title: "Регистрация аккаунта"})
+            +mainWrapperItem({})
+                +reservation({
+                    id: "reservation",
+                    room: "888", 
+                    category: "Люкс", 
+                    price: "9 990", 
+                    idstart: "date-picker2-start",
+                    idend: "date-picker2-end"
+                })
+                    +receipt()
+                        +service({name: "Сбор за услуги: скидка 2 179₽", price: "0"})
+                        +service({name: "Сбор за дополнительные услуги", price: "300"})
+            +mainWrapperItem({})
+                +sign-in()

@@ -1,4 +1,4 @@
 mixin link(options)
     -let linkCls = "link"
     -linkCls += options.borderBtn ? " link_border-btn" : options.btn ? " link_btn" : options.bigBtn ? " link_big-btn" : ""
-    a(class=linkCls)= options.text
+    a(class=linkCls href=options.link)= options.text

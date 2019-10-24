@@ -1,6 +1,6 @@
 .radio-btn {
     position: relative;
-    // display: flex;
+    margin-bottom: 20px;
     &__container {
         display: flex;
         flex-basis: 100%;
@@ -50,9 +50,5 @@
     }
     &:nth-last-child(n+2) {
         margin-right: 20px;
-        margin-bottom: 10px;
-    }
-    &:last-child {
-        margin-bottom: 30px;
     }
 }

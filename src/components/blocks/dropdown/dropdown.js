@@ -63,8 +63,7 @@
 
     // Open & Close
     if (event.target.closest('div').dataset.display != undefined) {
-      const currentDropdown = event.target.closest('div');
-      currentDropdown.classList.toggle('dropdown__menu-open');
+      event.target.closest('div').classList.toggle('dropdown__menu-open');
       return;
     }
     // Decrement

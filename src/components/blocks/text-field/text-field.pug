@@ -1,4 +1,10 @@
 mixin text-field(options)
-    - var inputClassName = "text-field"
+    -let inputClassName = "text-field"
     -inputClassName += options.focus ? " text-field_focus" : ""
-    input(class=inputClassName, type="text", placeholder=`${options.placeholder}`,value=options.value)
+    input(
+        class=inputClassName
+        type=options.type ? options.type : "text" 
+        name=options.nametag
+        placeholder=options.placeholder
+        value=options.value
+        )

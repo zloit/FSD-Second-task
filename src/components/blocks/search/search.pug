@@ -1,0 +1,16 @@
+include ..\card\card.pug
+include ..\date-picker\date-picker.pug
+include ..\dropdown\dropdown.pug
+include ..\link\link.pug
+include ..\field-wrapper\field-wrapper.pug
+
+mixin search(options)
+    +card()
+        h1= options.title
+        +date-picker({nameStart: "Прибытие", idstart: "date-picker-start", nameEnd: "Выезд", idend: "date-picker-end"})
+        +field-wrapper({name: "Гости"})
+            +dropdown({text: "Сколько гостей", display: "summation"})
+                +dropdown-option({item: "Взрослые", id: "item1"})
+                +dropdown-option({item: "Дети", id: "item2"})
+                +dropdown-option({item: "Младенцы",id: "item3"})
+        +link({text: "Подобрать номер", bigBtn: true})

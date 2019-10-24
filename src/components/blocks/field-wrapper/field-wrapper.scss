@@ -2,8 +2,10 @@
     // display: flex;
     // flex-wrap: wrap;
     // justify-content: space-between;
-    margin: 10px 0;
     line-height: 18px;
+    &:nth-last-child(n+2) {
+        margin-bottom: 20px;
+    }
     &__info {
         display: flex;
         justify-content: space-between;

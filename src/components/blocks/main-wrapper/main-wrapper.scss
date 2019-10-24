@@ -1,15 +1,20 @@
 .main-wrapper {
-    padding: 0 150px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-flow: row wrap;
+    margin: 0 auto;
+    max-width: $desktopWidth;
+    width: 100%;
 }
 
 .main-wrapper__item {
-    width: 320px;
+    &:nth-last-child(n+2) {
+        margin: 0 2rem 100px 0;
+    }
+    max-width: 320px;
+    width: 100%;
     display: flex;
     flex-flow: column wrap;
-    margin-bottom: 100px;
     &_margin {
         margin-bottom: 200px;
     }
