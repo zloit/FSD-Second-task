@@ -6,4 +6,10 @@
     box-sizing: border-box;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    &_ui-kit {
+       margin-bottom: 40px; 
+    }
+    &__section {
+        margin-bottom: 20px;
+    }
 }

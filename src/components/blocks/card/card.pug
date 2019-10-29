@@ -1,3 +1,9 @@
 mixin card(options)
-    div(class="card")
+    -let Cls="card"
+    -Cls += options.uiKit ? " card_ui-kit" : ""
+    form(class=Cls)
+        block
+
+mixin card-section(options)
+    .card__section
         block

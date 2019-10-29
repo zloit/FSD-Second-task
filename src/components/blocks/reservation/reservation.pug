@@ -17,7 +17,7 @@ mixin receipt(options)
         .services__total-price 0
 
 mixin reservation(options)
-    +card()
+    +card({uiKit: true})
         div(class="reservation" id=options.id)
             .reservation__head
                 p.reservation__room= options.room
