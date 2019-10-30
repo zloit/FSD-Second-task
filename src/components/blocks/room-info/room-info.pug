@@ -1,0 +1,7 @@
+mixin room-info(options)
+    -let roomCls = "room-info__number"
+    -roomCls += options.small ? " room-info__number_small" : ""
+    .room-info
+        p(class=roomCls)= options.room
+            span.room-info__category= options.category
+        p.room-info__price= options.price + "₽"

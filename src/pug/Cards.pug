@@ -5,6 +5,7 @@ include ..\components\blocks\search\search.pug
 include ..\components\blocks\sign-up\sign-up.pug
 include ..\components\blocks\reservation\reservation.pug
 include ..\components\blocks\sign-in\sign-in.pug
+include ..\components\blocks\room-preview\room-preview.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -30,9 +31,35 @@ html(lang="ru")
                     idstart: "date-picker2-start",
                     idend: "date-picker2-end"
                 })
-                    +receipt()
-                        +service({name: "Сбор за услуги: скидка 2 179₽", price: "0", info: true})
-                        +service({name: "Сбор за дополнительные услуги", price: "300", info: true})
+                    +service({name: "9 990₽ х 4 суток", price: "39 960"})
+                    +service({name: "Сбор за услуги: скидка 2 179₽", price: "0", info: true})
+                    +service({name: "Сбор за дополнительные услуги", price: "300", info: true})
                 +sign-in()
             +mainWrapperItem({})
                 #datepicker-inline
+                +room-preview({
+                    room: 888,
+                    category: "Люкс",
+                    price: "9990",
+                    starsChecked: 4,
+                    reviews: 145
+                })
+                    .room-slider__slide
+                        img(src="assets/img/888.jpg", alt="1")
+                    .room-slider__slide
+                        img(src="assets/img/888.jpg", alt="2")
+                    .room-slider__slide
+                        img(src="assets/img/888.jpg", alt="3")
+                +room-preview({
+                    room: 888,
+                    category: "Люкс",
+                    price: "9990",
+                    starsChecked: 4,
+                    reviews: 145
+                })
+                    .room-slider__slide
+                        img(src="assets/img/888.jpg", alt="1")
+                    .room-slider__slide
+                        img(src="assets/img/888.jpg", alt="2")
+                    .room-slider__slide
+                        img(src="assets/img/888.jpg", alt="3")

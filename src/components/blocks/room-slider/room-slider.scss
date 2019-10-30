@@ -1,0 +1,64 @@
+.room-slider {
+    overflow:hidden;
+    position:relative;
+    width: 270px;
+    height:150px;
+    margin:0 auto;
+    &:hover &__next, &:hover &__prev {display: block;}
+    &__next, &__prev {
+        display: none;
+        position:absolute;
+        width:44px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 24px;
+        text-align: center;
+        font-family: 'Material Icons';
+        color: #fff;
+        top: 56px;
+        z-index:1;
+        cursor:pointer;
+    }
+    &__next {
+        transform: rotate(-90deg);
+        right: 0;
+    }
+    &__prev {
+        transform: rotate(90deg);
+    }
+    &__slides {
+        position:relative;
+        transition:1s;
+    }
+    &__slide {
+        float:left;
+        display:block;
+        & img {
+            width:270px;
+            height:150px;
+        }
+    }
+    &__nav {
+        position:absolute;
+		width:calc(100%-30px);
+        bottom:8px;
+        right: 15px;
+		text-align: right;
+		z-index:1;
+        cursor:pointer;
+        & .dot {
+			display:inline-block;
+			width: 7.5px;
+			height: 7.5px;
+			cursor:pointer;
+			border-radius: 4px;
+            border:1px solid #fff;
+            &:nth-last-child(n+2) {
+                margin-right: 2px;
+            }
+        }
+        & .active {
+			background:#fff;
+		}
+    }
+}

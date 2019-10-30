@@ -1,0 +1,13 @@
+include ..\room-slider\room-slider.pug
+include ..\room-info\room-info.pug
+include ..\rate-btn\rate-btn.pug
+
+mixin room-preview(options)
+    .room-preview
+        +room-slider({})
+            block
+        .room-preview__info
+            +room-info({room: options.room, category: options.category, price: options.price, small: true})
+            .room-preview__rating
+                +rate-btn({name: `rating-${options.room}`, checked: options.starsChecked})
+                p.room-preview__reviews= options.reviews

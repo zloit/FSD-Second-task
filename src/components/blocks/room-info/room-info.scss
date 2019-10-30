@@ -1,0 +1,39 @@
+.room-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    &__number {
+        &::before {
+            content: "№ ";
+            font-size: 14px;
+        }
+        font-family: Quicksand;
+        color: $dark-color;
+        font-weight: bold;
+        line-height: 26px;
+        font-size: 24px;
+        &_small {
+            font-size: 20px;
+        }
+    }
+    &__category {
+        font-family: $mainFont;
+        padding-left: 5px;
+        font-size: 12px;
+        line-height: 15px;
+        color: $purple-color;
+        text-transform: uppercase;
+        font-weight: normal;       
+    }
+    &__price {
+        font-weight: bold;
+        line-height: 18px;
+        color: $dark-50-color;
+        &:after {
+            content: " в сутки";
+            position: relative;
+            font-weight: normal;
+            font-size: 11px;
+        }
+    }
+}
