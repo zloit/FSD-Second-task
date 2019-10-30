@@ -31,7 +31,8 @@ html(lang="ru")
                     idend: "date-picker2-end"
                 })
                     +receipt()
-                        +service({name: "Сбор за услуги: скидка 2 179₽", price: "0"})
-                        +service({name: "Сбор за дополнительные услуги", price: "300"})
+                        +service({name: "Сбор за услуги: скидка 2 179₽", price: "0", info: true})
+                        +service({name: "Сбор за дополнительные услуги", price: "300", info: true})
                 +sign-in()
             +mainWrapperItem({})
+                #datepicker-inline

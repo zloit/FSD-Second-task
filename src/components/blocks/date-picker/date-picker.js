@@ -87,3 +87,22 @@ if (($('#date-picker2-start').length)||($('#date-picker2-end').length)) {
 		$start.datepicker().data('datepicker').show();
 	  });
 }
+
+
+if ($('#datepicker-inline').length) {
+	const $dateFilter = $('#datepicker-inline');
+
+	$dateFilter.datepicker({
+		mask: 'Диапазон',
+		inline: true,
+		range: true,
+		multipleDatesSeparator: " — ",
+		startDate: new Date(2019, 7),
+		dateFormat: "dd M",
+		clearButton: true,
+		onRenderCell: function(date,cellType) {
+			return {html: '<span>'+date.getDate()+'</span>'}
+		}
+	});
+
+}

@@ -2,10 +2,13 @@ include ..\card\card.pug
 include ..\date-picker\date-picker.pug
 include ..\field-wrapper\field-wrapper.pug
 include ..\dropdown\dropdown.pug
+include ..\link\link.pug
 
 mixin service(options)
     div.services__service
         p.services__name= options.name
+        -if (options.info)
+            span.services__more i
         span.services__price= options.price
 
 mixin receipt(options)
@@ -13,20 +16,22 @@ mixin receipt(options)
         block
     div.services__total
         .services__total-name Итого
-        .services__total-dott
+        .services__total-dots
         .services__total-price 0
 
 mixin reservation(options)
     +card({uiKit: true})
         div(class="reservation" id=options.id)
-            .reservation__head
-                p.reservation__room= options.room
-                    span= options.category
-                p.reservation__price= options.price + "₽"
+            +card-section()
+                .reservation__head
+                    p.reservation__room= options.room
+                        span= options.category
+                    p.reservation__price= options.price + "₽"
             +date-picker({nameStart: "Прибытие", idstart: options.idstart, nameEnd: "Выезд", idend: options.idend})
-            +field-wrapper({name: "Dropdown", status: "default"})
+            +field-wrapper({name: "Гости"})
                 +dropdown({text: "Сколько гостей", display: "summation"})
                     +dropdown-option({item: "Взрослые", id: "item1"})
                     +dropdown-option({item: "Дети", id: "item2"})
                     +dropdown-option({item: "Младенцы",id: "item3"})
             block
+            +btn({big: true, text: "Забронировать"})

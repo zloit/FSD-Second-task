@@ -2,7 +2,7 @@
     &__head {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 20px;
+        align-items: baseline;
     }
     &__price {
         font-weight: bold;
@@ -23,8 +23,8 @@
         font-family: Quicksand;
         color: $dark-color;
         font-weight: bold;
-        line-height: 17px;
-        font-size: 22px;
+        line-height: 26px;
+        font-size: 24px;
         & span{
             font-family: $mainFont;
             padding-left: 5px;
@@ -38,15 +38,58 @@
 }
 
 .services {
-    // display: flex;
+    margin-bottom: 2.1rem;
     &__service{
         display: flex;
         justify-content: space-between;
+        &:nth-last-child(n+2) {
+            margin-bottom: 10px;
+        }
+    }
+    &__more {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: bold;
+        color: $dark-25-color;
+        border: 1px solid $dark-25-color;
+        cursor: pointer;
     }
     &__name {
-
+        flex-basis: 70%;
     }
     &__price {
-
+        flex-basis: 20%;
+        text-align: right;
+        &::after {
+            content: "₽";
+        }
+    }
+    &__total {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-family: $mainFont;
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 24px;
+        color: $dark-color;
+        margin-bottom: 1.5rem;
+        &-dots {
+            width: 100%;
+            border-bottom: 1px dotted $dark-25-color;
+            height: 1px;
+            position: relative;
+            margin: 0 5px;
+        }
+        &-price {
+            font-family: Quicksand;
+            &::after {
+                content: "₽";
+            }
+        }
     }
 }
