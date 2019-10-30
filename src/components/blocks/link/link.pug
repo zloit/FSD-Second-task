@@ -1,4 +1,9 @@
+mixin btn(options)
+    -let btnCls = "btn"
+    -btnCls += options.big ? " btn_increased" : options.dark ? " btn_darkened" : ""
+    button(class=btnCls href=options.link type='submit')= options.text
+
 mixin link(options)
     -let linkCls = "link"
-    -linkCls += options.borderBtn ? " link_border-btn" : options.btn ? " link_btn" : options.bigBtn ? " link_big-btn" : ""
+    -linkCls += options.border ? " link_bordered" : ""
     a(class=linkCls href=options.link)= options.text
