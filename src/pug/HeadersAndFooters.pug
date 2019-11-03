@@ -1,0 +1,16 @@
+include ..\components\blocks\wrapper\wrapper.pug
+include ..\components\blocks\logo\logo.pug
+include ..\components\blocks\header\header.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Cards
+    body.greybg
+        +wrapper()
+                +logo({})
+        +header({uiKit: true})
+        +header({uiKit: true, profile: "Cosmin Negoita"})

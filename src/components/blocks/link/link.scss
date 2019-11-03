@@ -49,6 +49,9 @@
     text-transform: uppercase;
     transition: .1s;
     cursor: pointer;
+    &:nth-last-child(n+2) {
+        margin-right: 20px;
+    }
     &:hover {opacity: .5;}
     &_bordered {
         z-index: 0;

@@ -1,0 +1,10 @@
+mixin page(options)
+    li(class= options.current ? "navigation__page navigation__page_current" : "navigation__page")
+            block
+            a(href=options.link)= options.page
+mixin navigation(options)
+    ul.navigation
+        block
+mixin submenu(options)
+    ul.navigation__submenu
+        block
