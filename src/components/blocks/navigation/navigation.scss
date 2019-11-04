@@ -1,8 +1,12 @@
 .navigation {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     &__page {
         position: relative;
-        margin-right: 30px;
+        &:nth-last-child(n+2) {
+            margin-right: 30px;
+        }
         & a, & a:visited {
             display: flex;
             white-space: nowrap;

@@ -1,0 +1,10 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    &__item {
+        color: $dark-50-color;
+        padding-top: 20px;
+        line-height: 17px;
+    }
+}

@@ -8,14 +8,27 @@ header {
     margin: auto;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
     &__profile {
         border-left: 1px solid rgba(31, 32, 65, 0.1);;
         padding-left: 30px;
         color: $dark-50-color;
         line-height: 30px;
+        margin: 20px 20px 20px 0;
     }
     &_ui-kit {
         margin-bottom: 40px;
+    }
+    &__sign-in {
+        display: flex;
+        margin: 20px;
+    }
+    &__nav {
+        margin: 20px;
+        @media screen and (max-width: $tableWidth) {
+            order: 1;
+        }
     }
 }
 

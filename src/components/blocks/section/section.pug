@@ -1,0 +1,7 @@
+mixin section(options)
+    section.section
+        h3= options.name
+        block
+
+mixin sectionItem(options)
+    a(class="section__item" href=options.link ? options.link : "#")= options.name

@@ -1,7 +1,7 @@
 include ..\components\blocks\wrapper\wrapper.pug
 include ..\components\blocks\logo\logo.pug
 include ..\components\blocks\header\header.pug
-
+include ..\components\blocks\footer\footer.pug
 <!DOCTYPE html>
 html(lang="ru")
     head
@@ -14,3 +14,30 @@ html(lang="ru")
                 +logo({})
         +header({uiKit: true})
         +header({uiKit: true, profile: "Cosmin Negoita"})
+        +footer({
+            uiKit: true,
+            about: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+            formTitle: "Subscribe to our newsletter",
+            formText: "Receive our latest news and promotions in your inbox!",
+            formPlaceholder: "Your email address",
+            copyright: "Copyright © 2018 Toxin UI Kit. All rights reserved."
+        })
+            +section({name:"Navigation"})
+                +sectionItem({name:"About Us"})
+                +sectionItem({name:"News"})
+                +sectionItem({name:"Support"})
+                +sectionItem({name:"Products"})
+            +section({name:"ABOUT US"})
+                +sectionItem({name:"Who we are"})
+                +sectionItem({name:"Our team"})
+                +sectionItem({name:"Careers"})
+                +sectionItem({name:"Investors"})
+            +section({name:"Support"})
+                +sectionItem({name:"Documentation"})
+                +sectionItem({name:"Community"})
+                +sectionItem({name:"Careers"})
+                +sectionItem({name:"Get in Touch"})
+        +footerCreative({
+            uiKit: true,
+            about: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+        })

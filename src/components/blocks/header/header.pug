@@ -6,7 +6,7 @@ mixin header(options)
     header
         div(class=options.uiKit ? 'header header_ui-kit' : "header")
             +logo({title: true})
-            nav
+            nav.header__nav
                 +navigation({})
                     +page({link: "#", page: "Home", current: true})
                     +page({link: "", page: "About Us"})
@@ -21,5 +21,6 @@ mixin header(options)
             if (options.profile)
                 span.header__profile= options.profile
             else
-                +link({border: true, text: "Login", link: "#"})
-                +link({text: "Register", link: "#"})
+                .header__sign-in
+                    +link({border: true, text: "Login", link: "#"})
+                    +link({text: "Register", link: "#", inHeader: true})
