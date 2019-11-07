@@ -1,0 +1,7 @@
+include ..\wrapper\wrapper.pug
+
+mixin demo(options)
+    .demo
+        +wrapper({})
+                +search({title: "Найдём номера под ваши пожелания"})
+                p.demo__slogan= options.slogan

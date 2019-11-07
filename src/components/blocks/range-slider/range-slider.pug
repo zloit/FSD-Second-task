@@ -7,3 +7,6 @@ mixin range-slider(options)
                     id= options.resultId
                 )
         div#range-slider
+        if (options.description)
+            p.range-slider__description= options.description
+            

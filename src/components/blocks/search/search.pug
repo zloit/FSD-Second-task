@@ -5,7 +5,7 @@ include ..\link\link.pug
 include ..\field-wrapper\field-wrapper.pug
 
 mixin search(options)
-    +card({uiKit: true})
+    +card({uiKit: options.uiKit})
         h1= options.title
         +date-picker({nameStart: "Прибытие", idstart: "date-picker-start", nameEnd: "Выезд", idend: "date-picker-end"})
         +field-wrapper({name: "Гости"})

@@ -1,4 +1,5 @@
 mixin wrapper(options)
     -let wrapperCls = "wrapper"
+    -wrapperCls += options.flex ? " wrapper_flex" : ""
     div(class=wrapperCls)
         block

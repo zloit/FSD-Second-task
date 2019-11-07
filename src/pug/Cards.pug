@@ -16,11 +16,11 @@ html(lang="ru")
         title Cards
     body.greybg
         header
-            +wrapper()
+            +wrapper({})
                 +logo({})
         +mainWrapper()
             +mainWrapperItem({})
-                +search({title: "Найдём номера под ваши пожелания"})
+                +search({title: "Найдём номера под ваши пожелания",uiKit:true})
                 +sign-up({title: "Регистрация аккаунта"})
             +mainWrapperItem({})
                 +reservation({
@@ -41,7 +41,7 @@ html(lang="ru")
                     room: 888,
                     category: "Люкс",
                     price: "9990",
-                    starsChecked: 4,
+                    starsChecked: 5,
                     reviews: 145
                 })
                     .room-slider__slide
@@ -51,7 +51,7 @@ html(lang="ru")
                     .room-slider__slide
                         img(src="assets/img/888.jpg", alt="3")
                 +room-preview({
-                    room: 888,
+                    room: 840,
                     category: "Люкс",
                     price: "9990",
                     starsChecked: 4,

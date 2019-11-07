@@ -46,4 +46,7 @@
     &_tight {
         width: 90%;
     }
+    &_short:nth-last-child(n+2) {
+        margin-bottom: 5px;
+    }
 }

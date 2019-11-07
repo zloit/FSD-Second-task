@@ -10,10 +10,39 @@ html(lang="ru")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Cards
     body.greybg
-        +wrapper()
+        +wrapper({})
                 +logo({})
-        +header({uiKit: true})
-        +header({uiKit: true, profile: "Cosmin Negoita"})
+        +header({
+            uiKit: true,
+            loginText: "Login",
+            registerText: "Register"
+        })
+            +page({link: "#", page: "Home", current: true})
+            +page({link: "", page: "About Us"})
+            +page({link: "", page: "Services"})
+                +submenu()
+                    +page({link: "#", page: "Service 1"})
+                    +page({link: "", page: "Service 2"})
+                    +page({link: "", page: "Service 3"}) 
+            +page({link: "", page: "Careers"})
+            +page({link: "", page: "News"})
+            +page({link: "", page: "Documentation"})
+        +header({
+            uiKit: true,
+            profile: "Cosmin Negoita",
+            loginText: "Login",
+            registerText: "Register"
+        })
+            +page({link: "#", page: "Home", current: true})
+            +page({link: "", page: "About Us"})
+            +page({link: "", page: "Services"})
+                +submenu()
+                    +page({link: "#", page: "Service 1"})
+                    +page({link: "", page: "Service 2"})
+                    +page({link: "", page: "Service 3"}) 
+            +page({link: "", page: "Careers"})
+            +page({link: "", page: "News"})
+            +page({link: "", page: "Documentation"})
         +footer({
             uiKit: true,
             about: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",

@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 5px;
     &__checkbox {
         position: absolute;
         z-index: -1;
@@ -38,14 +39,10 @@
     &__description {
         padding-left: 30px;
         color: $dark-50-color;
+        font-size: 12px;
+        line-height: 16px;
     }
     &:hover .checkbox-btn__label::before{
         border-color: $purple-color;
-    }
-    &:nth-last-child(n+2) {
-        margin-bottom: 10px;
-    }
-    &:last-child {
-        margin-bottom: 30px;
     }
 }

@@ -4,6 +4,7 @@ mixin field-wrapper(options)
     -let blockCls = "field-wrapper__block"
     -wrapperCls += options.dateDropdown ? " field-wrapper_date-dropdown" : ""
     -wrapperCls += options.tight ? " field-wrapper_tight" : ""
+    -wrapperCls += options.short ? " field-wrapper_short" : ""
     -nameCls += options.highBottom ? " field-wrapper__name_high-bottom" : ""
     -blockCls += options.tocolumn ? " field-wrapper__block_to-column" : ""
     div(class=wrapperCls)

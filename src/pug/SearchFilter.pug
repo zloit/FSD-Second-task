@@ -1,0 +1,92 @@
+include ..\components\blocks\logo\logo.pug
+include ..\components\blocks\header\header.pug
+include ..\components\blocks\footer\footer.pug
+include ..\components\blocks\search\search.pug
+include ..\components\blocks\wrapper\wrapper.pug
+include ..\components\blocks\dropdown\dropdown.pug
+include ..\components\blocks\date-picker\date-picker.pug
+include ..\components\blocks\expand-checklist\expand-checklist.pug
+include ..\components\blocks\checkbox-btn\checkbox-btn.pug
+include ..\components\blocks\range-slider\range-slider.pug
+include ..\components\blocks\aside\aside.pug
+include ..\components\blocks\search-result\search-result.pug
+include ..\components\blocks\room-preview\room-preview.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Landing Page
+    body
+        +header({
+            loginText: "Войти",
+            registerText: "Зарегистрироваться"
+        })
+            +page({link: "", page: "О нас"})
+            +page({link: "", page: "Услуги"})
+                +submenu()
+                    +page({link: "#", page: "Услуга 1"})
+                    +page({link: "", page: "Услуга 2"})
+                    +page({link: "", page: "Услуга 3"}) 
+            +page({link: "", page: "Вакансии"})
+            +page({link: "", page: "Новости"})
+            +page({link: "", page: "Соглашения"})
+                +submenu()
+                    +page({link: "#", page: "Соглашение 1"})
+                    +page({link: "", page: "Соглашение 2"})
+                    +page({link: "", page: "Соглашение 3"})
+        +wrapper({flex: true})
+            +aside()
+                +field-wrapper({name: "Даты пребывания в отеле"})
+                    +date-filter({id: "date-filter"})
+                +field-wrapper({name: "Гости"})
+                    +dropdown({text: "Сколько гостей", display: "summation"})
+                        +dropdown-option({item: "Взрослые", id: "item1"})
+                        +dropdown-option({item: "Дети", id: "item2"})
+                        +dropdown-option({item: "Младенцы",id: "item3"})
+                +range-slider({name: "Диапазон цены", resultId: "RangeSliderResult",description: "Стоимость за сутки пребывания в номере"})
+                +field-wrapper({name: "Checkbox Buttons", highBottom: true, tocolumn: true})
+                    +checkbox-btn({text: "Можно курить", name: "smoking"})
+                    +checkbox-btn({text: "Можно с питомцами", name: "pets", checked: true})
+                    +checkbox-btn({text: "Можно пригласить гостей (до 10 человек)", name: "guests", checked: true})
+                +field-wrapper({name: "Доступность", highBottom: true})
+                    +checkbox-btn({text: "Широкий коридор", name: "rich-1", description: "Ширина коридоров в номере не менее 91 см."})
+                    +checkbox-btn({text: "Помощник для инвалидов", name: "rich-2", description: "На 1 этаже вас встретит специалист  и проводит до номера."})
+                +field-wrapper({name: "Удобства номера", short: true})
+                    +dropdown({text: "2 спальни, 2 кровати...", display: "listing"})
+                        +dropdown-option({item: "Спальни", id: "item1"})
+                        +dropdown-option({item: "Кровати", id: "item2"})
+                        +dropdown-option({item: "Ванные комнаты",id: "item3"})
+                +expand-checklist({title: "Дополнительные удобства", id: "expandChecklist"})
+                            +checkbox-btn({text: "Завтрак", name: "breakfast"})
+                            +checkbox-btn({text: "Письменный стол", name: "table", checked: true})
+                            +checkbox-btn({text: "Стул для кормления", name: "chair", checked: true})
+                            +checkbox-btn({text: "Кроватка", name: "bed", checked: true})
+                            +checkbox-btn({text: "Телевизор", name: "tv"})
+                            +checkbox-btn({text: "Шампунь", name: "shampoo"})
+                            +checkbox-btn({text: "Телевизор", name: "tv0"})
+                            +checkbox-btn({text: "Шампунь", name: "shampoo0"})
+            +search-result()
+        +footer({
+            about: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+            formTitle: "Подписка",
+            formText: "Получайте специальные предложения и новости сервиса",
+            formPlaceholder: "Email",
+            copyright: "Copyright © 2018 Toxin отель. Все права зачищены."
+        })
+            +section({name:"навигация"})
+                +sectionItem({name:"О нас"})
+                +sectionItem({name:"Новости"})
+                +sectionItem({name:"Служба поддержки"})
+                +sectionItem({name:"Услуги"})
+            +section({name:"О нас"})
+                +sectionItem({name:"О сервисе"})
+                +sectionItem({name:"Наша команда"})
+                +sectionItem({name:"Вакансии"})
+                +sectionItem({name:"Инвесторы"})
+            +section({name:"Служба поддержки"})
+                +sectionItem({name:"Соглашения"})
+                +sectionItem({name:"Сообщества"})
+                +sectionItem({name:"Связь с нами"})
