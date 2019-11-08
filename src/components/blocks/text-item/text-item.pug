@@ -1,7 +1,11 @@
 mixin text-item(options)
-    - infoClassName = "text-item__info"
-    - infoClassName += options.color ? " text-item_color" : ""
-    - infoClassName += options.montserrat ? " text-item_montserrat" : ""
-    div(class = `text-item text-item_${options.demo}`)
-        div(class = `text-item__demo`)= options.demo
-        div(class = infoClassName)= options.info
+    //- - infoClassName = "text-item__info"
+    //- - infoClassName += options.color ? " text-item_color" : ""
+    //- - infoClassName += options.montserrat ? " text-item_montserrat" : ""
+    //- div(class = `text-item text-item_${options.demo}`)
+    //-     div(class = `text-item__demo`)= options.demo
+    //-     div(class = infoClassName)= options.info
+    .text-item
+        p(class=`text-item__name text-item__name_${options.name}`)= options.name
+        .text-item__demo
+            block

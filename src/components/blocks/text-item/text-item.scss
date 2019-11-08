@@ -1,50 +1,36 @@
 .text-item {
-    width: 403px;
-    padding-bottom: 50px;
     display: flex;
-    color: $dark-color;
-    &__info {
-        font-family: 'Quicksand';
-        font-weight: bold;
-        margin-left: 31px;
-        &_color {
-            color: $dark-75-color;
-        }
+    &:nth-last-child(n+2) {
+        margin-bottom: 50px;
     }
-    &_H1 {
-        font-size: 24px;
-        line-height: 30px;
-    }
-    &_H2 {
-        font-size: 19px;
-        line-height: 24px;
-    }
-    &_H3 {
-        font-size: 12px;
-        letter-spacing: 0.3px;
-        line-height: 15px;
-        text-transform: uppercase;
-    }
-    &_Body {
-        font-size: 14px;
-        line-height: 24px;
+    &__wrapper {
+        flex-basis: 400px;
     }
     &__demo {
-        color: $dark-25-color;
-        float: left;
-        width: 36px;
+        flex-basis: calc(100% - 40px);
+    }
+
+    &__name {
+        margin-right: 30px;
+        flex-basis: 40px;
         text-align: right;
-        font-family: 'Montserrat';
-        font-weight: normal;
-    }
-    &_montserrat {
-        font-family: 'Montserrat';
-        font-weight: normal;
-    }
-    &_color {
-        color: $dark-75-color;
-        font-family: Montserrat;
-        font-weight: normal;
+        color: $dark-25-color;
+        &_H1 {
+            font-size: 24px;
+            line-height: 29px;
+        }
+        &_H2 {
+            font-size: 19px;
+            line-height: 23px;
+        }
+        &_H3 {
+            font-size: 12px;
+            line-height: 15px;
+        }
+        &_Body {
+            font-size: 14px;
+            line-height: 24px;
+        }
     }
 }
 
