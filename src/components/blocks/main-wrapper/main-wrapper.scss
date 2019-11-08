@@ -2,20 +2,20 @@
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
-    margin: 0 auto;
+    margin: 0 auto 100px;
     max-width: $desktopWidth;
     width: 100%;
+    &_long {
+        margin-bottom: 170px;
+    }
 }
 
 .main-wrapper__item {
-    &:nth-last-child(n+2) {
-        margin: 0 2rem 100px 0;
-    }
     max-width: 320px;
     width: 100%;
     display: flex;
     flex-flow: column wrap;
-    &_margin {
-        margin-bottom: 200px;
+    &_narrow {
+        max-width: 266px;
     }
 }

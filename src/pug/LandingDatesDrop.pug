@@ -51,3 +51,9 @@ html(lang="ru")
                 +sectionItem({name:"Соглашения"})
                 +sectionItem({name:"Сообщества"})
                 +sectionItem({name:"Связь с нами"})
+    script(type='text/javascript').
+        window.onload = function() {
+            console.log('12');
+            $('#date-picker-start').click();
+        };
+        

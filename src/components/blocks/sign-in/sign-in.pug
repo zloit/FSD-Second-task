@@ -6,7 +6,7 @@ include ..\offer\offer.pug
 
 mixin sign-in(options)
     +card({uiKit: true})
-        h1 Войти
+        h1.sign-in__title Войти
         +card-section()
             +text-field({placeholder: "Email",nametag: "email", type: "email"})
             +text-field({placeholder: "Пароль",nametag: "password", type: "password"})

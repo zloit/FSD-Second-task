@@ -1,9 +1,11 @@
-mixin mainWrapper()
-    .main-wrapper
-            block
+mixin mainWrapper(options)
+    -let Cls = "main-wrapper"
+    -Cls += options.long ? " main-wrapper_long" : ""
+    div(class=Cls)
+        block
 
 mixin mainWrapperItem(options)
     -let Cls = "main-wrapper__item"
-    -Cls += options.margin ? " main-wrapper__item_margin" : ""
+    -Cls += options.narrow ? " main-wrapper__item_narrow" : ""
     div(class=Cls)
         block

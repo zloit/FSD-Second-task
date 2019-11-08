@@ -1,9 +1,11 @@
 mixin btn(options)
     -let btnCls = "btn"
     -btnCls += options.big ? " btn_increased" : options.dark ? " btn_darkened" : ""
+    -btnCls += options.uiKit ? " btn_ui-kit" : ""
     button(class=btnCls href=options.link type='submit')= options.text
 
 mixin link(options)
     -let linkCls = "link"
     -linkCls += options.border ? " link_bordered" : ""
+    -linkCls += options.uiKit ? " link_ui-kit" : ""
     a(class=linkCls href=options.link)= options.text

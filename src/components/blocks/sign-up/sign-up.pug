@@ -9,7 +9,7 @@ include ..\offer\offer.pug
 
 mixin sign-up(options)
     +card({uiKit: true})
-        h1= options.title
+        h1.sign-up__title= options.title
         +card-section()
             +text-field({placeholder: "Имя",nametag: "firstname"})
             +text-field({placeholder: "Фамилия",nametag: "lastname"})

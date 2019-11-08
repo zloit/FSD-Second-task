@@ -54,12 +54,12 @@
 .datepicker-inline {
   .datepicker {
     border-color: map-get($datepickerBorderColor, inline);
-    box-shadow: none;
     position: static;
     left: auto;
     right: auto;
     opacity: 1;
     transform: none;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   }
 
   .datepicker--pointer {

@@ -34,6 +34,9 @@
     &_darkened {
         color: $dark-50-color;
     }
+    &_ui-kit {
+        margin: 0 20px 30px 0;
+    }
 }
 .link {
     padding: 1rem 1.25rem;
@@ -72,5 +75,10 @@
             background: linear-gradient(180deg,rgba(188, 156, 255, 0.5),rgba(139, 164, 249, 0.5));
         }
     }
-
+    &_ui-kit {
+        margin-bottom: 30px;
+    }
+    &__group {
+        display: flex;
+    }
 }       
