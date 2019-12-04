@@ -114,10 +114,14 @@
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
-        line-height: 22px;
+        text-align: center;
+        line-height: 30px;
+        color: rgba(31, 32, 65, 0.5);
         border: 1px solid $dark-25-color;
         border-radius: 50%;
         background-color: #fff;
+        user-select: none;
+        cursor: pointer;
     }
     &__forbid {
         border-color: $dark-5-color;

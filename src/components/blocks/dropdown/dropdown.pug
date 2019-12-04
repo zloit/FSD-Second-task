@@ -7,14 +7,14 @@ mixin dropdown(options)
         .dropdown__menu
             block
             .dropdown__btn-wrapper
-                button.dropdown__clear Очистить
-                button.dropdown__apply Применить
+                span.dropdown__clear Очистить
+                span.dropdown__apply Применить
 
 mixin dropdown-option(options)
     .dropdown__option(data-id=`${options.id}`)
         div(class="dropdown__content")
             p.dropdown__item= options.item
         .dropdown__controls
-            button(class="dropdown__btn-decrement dropdown__forbid") -
+            span(class="dropdown__btn-decrement dropdown__forbid") -
             span.dropdown__counter 0
-            button.dropdown__btn-increment +
+            span.dropdown__btn-increment +

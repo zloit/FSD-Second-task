@@ -67,8 +67,8 @@
       return;
     }
     // Decrement
-    if (event.target.closest('button.dropdown__btn-decrement') != undefined) {
-      const btn = event.target.closest('button.dropdown__btn-decrement');
+    if (event.target.closest('span.dropdown__btn-decrement') != undefined) {
+      const btn = event.target.closest('span.dropdown__btn-decrement');
       const count = btn.nextElementSibling;
       if (count.innerHTML>1) {
         count.innerHTML = +count.innerHTML - 1;
@@ -80,7 +80,7 @@
       return;
     }
     // Increment
-    if (event.target.closest('button.dropdown__btn-increment') != undefined) {
+    if (event.target.closest('span.dropdown__btn-increment') != undefined) {
       const count = event.target.previousSibling;
       const btn = count.previousSibling;
       if (count.innerHTML==0) {
@@ -91,11 +91,11 @@
       return;
     }
     // Применить
-    if (event.target.closest('button.dropdown__apply') != undefined) {
+    if (event.target.closest('span.dropdown__apply') != undefined) {
       event.target.closest('div.dropdown').classList.toggle('dropdown__menu-open');
     }
     // Очистить
-    if (event.target.closest('button.dropdown__clear') != undefined) {
+    if (event.target.closest('span.dropdown__clear') != undefined) {
       
       const option = event.target.closest('div.dropdown').getElementsByClassName('dropdown__option');
       

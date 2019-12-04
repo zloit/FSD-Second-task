@@ -8,13 +8,16 @@ html {
   line-height: $mainLineHeight;
 	font-size: $mainFontSize;
   height: 100%;
-  @media screen and (max-width: $desktopWidth) {
-		font-size: 16px;
+  // @media screen and (max-width: $desktopWidth) and (min-width: $smDesktopWidth){
+	// 	font-size: 16px;
+  // }
+  @media screen and (max-width: $smDesktopWidth) and (min-width: $tableWidth){
+   font-size: 14px; 
   }
-  @media screen and (max-width: $tableWidth) {
+  @media screen and (max-width: $tableWidth) and (min-width: $phoneWidth){
 		font-size: 15px;
   }
-  @media screen and (max-width: $phoneWidth) {
+  @media screen and (max-width: $phoneWidth){
 		font-size: 14px;
   }
 }
