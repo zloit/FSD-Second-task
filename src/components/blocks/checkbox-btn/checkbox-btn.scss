@@ -9,7 +9,7 @@
         z-index: -1;
         opacity: 0;
         &:checked + .checkbox-btn__label:before {
-            background: no-repeat center url('/assets/img/checkbox.svg');
+            background: no-repeat center url('../../assets/img/checkbox.svg');
             background-size: 10px;
         }
     }
