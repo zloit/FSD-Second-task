@@ -1,5 +1,6 @@
 mixin wrapper(options)
     -let wrapperCls = "wrapper"
     -wrapperCls += options.flex ? " wrapper_flex" : ""
+    -wrapperCls += options.padding ? " wrapper_padding" : ""
     div(class=wrapperCls)
         block

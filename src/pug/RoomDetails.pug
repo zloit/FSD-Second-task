@@ -1,0 +1,66 @@
+include ..\components\blocks\logo\logo.pug
+include ..\components\blocks\header\header.pug
+include ..\components\blocks\footer\footer.pug
+include ..\components\blocks\wrapper\wrapper.pug
+include ..\components\blocks\reservation\reservation.pug
+include ..\components\blocks\container\container.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Landing Page
+    body
+        +header({
+            loginText: "Войти",
+            registerText: "Зарегистрироваться"
+        })
+            +page({link: "", page: "О нас"})
+            +page({link: "", page: "Услуги"})
+                +submenu({})
+                    +page({link: "#", page: "Услуга 1"})
+                    +page({link: "", page: "Услуга 2"})
+                    +page({link: "", page: "Услуга 3"}) 
+            +page({link: "", page: "Вакансии"})
+            +page({link: "", page: "Новости"})
+            +page({link: "", page: "Соглашения"})
+                +submenu({})
+                    +page({link: "#", page: "Соглашение 1"})
+                    +page({link: "", page: "Соглашение 2"})
+                    +page({link: "", page: "Соглашение 3"})
+        +wrapper({flex: true, padding: true})
+            +reservation({
+                    id: "reservation",
+                    room: "888", 
+                    category: "Люкс", 
+                    price: "9 990", 
+                    idstart: "date-picker2-start",
+                    idend: "date-picker2-end"
+                })
+                    +service({name: "9 990₽ х 4 суток", price: "39 960"})
+                    +service({name: "Сбор за услуги: скидка 2 179₽", price: "0", info: true})
+                    +service({name: "Сбор за дополнительные услуги", price: "300", info: true})
+            +container({})
+        +footer({
+            about: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+            formTitle: "Подписка",
+            formText: "Получайте специальные предложения и новости сервиса",
+            formPlaceholder: "Email",
+            copyright: "Copyright © 2018 Toxin отель. Все права зачищены."
+        })
+            +section({name:"навигация"})
+                +sectionItem({name:"О нас"})
+                +sectionItem({name:"Новости"})
+                +sectionItem({name:"Служба поддержки"})
+                +sectionItem({name:"Услуги"})
+            +section({name:"О нас"})
+                +sectionItem({name:"О сервисе"})
+                +sectionItem({name:"Наша команда"})
+                +sectionItem({name:"Вакансии"})
+                +sectionItem({name:"Инвесторы"})
+            +section({name:"Служба поддержки"})
+                +sectionItem({name:"Соглашения"})
+                +sectionItem({name:"Сообщества"})
+                +sectionItem({name:"Связь с нами"})
