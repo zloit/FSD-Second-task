@@ -1,14 +1,25 @@
 .demo {
     background: url(/assets/img/bg.jpg) no-repeat center;
     background-size: cover;
-    padding: 70px 20px;
+    @media screen and (min-width: $phoneWidth ) {
+        padding: 70px 20px;
+    }
+    @media screen and (max-width: $phoneWidth ) {
+        padding: 20px 5px;
+    }
     &__slogan {
         text-align: right;
         margin-top: 320px;
         margin-left: auto;
         width: 19rem;
-        @media screen and (max-width: $smDesktopWidth) {
+        @media screen and (min-width: $smDesktopWidth ) {
+            margin-top: 320px;
+        }
+        @media screen and (max-width: $smDesktopWidth) and (min-width: $phoneWidth ){
             margin-top: 180px;
+        }
+        @media screen and (max-width: $phoneWidth ) {
+            margin-top: 50px;
         }
     }
 }

@@ -37,6 +37,8 @@ footer {
         }
     }
     &__social {
+        display: flex;
+        margin-left: 10px;
         &-icon:nth-last-child(n+2) {
             margin-right: 20px;
         }

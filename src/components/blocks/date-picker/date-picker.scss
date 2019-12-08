@@ -55,10 +55,13 @@
         position: relative;
         flex-basis: 100%;
     }
+    &__input {
+        position: relative;
+    }
     &__turn {
         position: absolute;
         z-index: 1;
-        top: 30px;
+        top: 10px;
         right: 1px;
         width: 43px;
         line-height: 24px;

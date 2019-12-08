@@ -22,6 +22,7 @@
         }
     }
     &__submenu {
+        z-index: 1;
         background: #fff;
         padding: 10px;
         visibility: hidden;

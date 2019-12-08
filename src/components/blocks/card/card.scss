@@ -1,6 +1,6 @@
 .card {
     @media screen and (max-width: $phoneWidth ) {
-        width: 320px;
+        width: 310px;
     }
     @media screen and (min-width: $phoneWidth ) {
         width: 380px;

@@ -22,7 +22,7 @@ mixin date-picker(options)
     div(class="date-picker__container")
         .date-picker__item
             label.date-picker__label= options.nameStart
-            div
+            div.date-picker__input
                 input(
                     type="text"
                     class="date-picker"
@@ -33,7 +33,7 @@ mixin date-picker(options)
                 i.date-picker__turn expand_more
         .date-picker__item
             label.date-picker__label= options.nameEnd
-            div
+            div.date-picker__input
                 input(
                     type="text"
                     class="date-picker"

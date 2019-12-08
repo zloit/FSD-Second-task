@@ -2,9 +2,21 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
+    @media screen and (max-width: $tableWidth) and (min-width: $phoneWidth){
+        margin: 10px;
+    }
+    @media screen and (max-width: $phoneWidth ) {
+        flex-basis: 100%;
+        text-align: center;
+    }
     &__item {
         color: $dark-50-color;
-        padding-top: 20px;
+        @media screen and (min-width: $phoneWidth ) {
+            padding-top: 20px;
+        }
+        @media screen and (max-width: $phoneWidth ) {
+            padding-top: 5px;
+        }
         line-height: 17px;
     }
 }
