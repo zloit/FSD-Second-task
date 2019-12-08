@@ -1,4 +1,7 @@
 aside {
     max-width: 270px;
+    @media screen and (max-width: $tableWidth) {
+        max-width: 90%;
+    }
     margin: 30px 2px;
 }
