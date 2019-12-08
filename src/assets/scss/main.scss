@@ -11,14 +11,14 @@ html {
   // @media screen and (max-width: $desktopWidth) and (min-width: $smDesktopWidth){
 	// 	font-size: 16px;
   // }
-  @media screen and (max-width: $smDesktopWidth) and (min-width: $tableWidth){
-   font-size: 14px; 
-  }
-  @media screen and (max-width: $tableWidth) and (min-width: $phoneWidth){
-		font-size: 15px;
-  }
+  // @media screen and (max-width: $smDesktopWidth) and (min-width: $tableWidth){
+  //  font-size: 14px; 
+  // }
+  // @media screen and (max-width: $tableWidth) and (min-width: $phoneWidth){
+	// 	font-size: 15px;
+  // }
   @media screen and (max-width: $phoneWidth){
-		font-size: 14px;
+		font-size: 12px;
   }
 }
 
@@ -26,7 +26,6 @@ body {
   font-family: $mainFont;
 	font-size: $mainFontSize;
   font-weight: $mainFontWeight;
-  font-family: Montserrat;
   font-style: normal;
   line-height: 24px;
   color:  $dark-75-color;
@@ -38,7 +37,9 @@ h1 {
   font-size: 24px;
   line-height: 30px;
   color:  $dark-color;
-  letter-spacing: -0.5px;
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 19px; 
+   }
 }
 
 h2 {
@@ -47,6 +48,9 @@ h2 {
   font-size: 19px;
   line-height: 24px;
   color:  $dark-color;
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 12px; 
+   }
 }
 
 h3 {

@@ -1,5 +1,7 @@
 mixin comment(options)
-    .comment
+    -let commentCls = "comment"
+    -commentCls += options.uiKit ? " comment_ui-kit" : ""
+    div(class=commentCls)
         .comment__author
             img(class="comment__author-avatar" src=`assets/img/${options.img}` alt="")
             .comment__info

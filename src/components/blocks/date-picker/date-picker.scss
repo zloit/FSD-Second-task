@@ -28,8 +28,7 @@
     &__container {
         display: flex;
         justify-content: space-between;
-        // padding-top: 30px;
-        margin-bottom: 20px;
+        margin: 20px 0; // Form Elements
         line-height: normal;
     }
     &__item {

@@ -14,8 +14,8 @@ html(lang="en")
     body
         +wrapper({})
             +logo({})
-        .main-wrapper
-            .main-wrapper__item
+        +wrapper({flex: true})
+            +wrapperBlock({})
                 +color-item({name: "Dark Shade 100%", description: "#1F2041", color: "dark-color"})
                 +color-item({name: "Dark Shade 75%", description: "#1F2041", color: "dark-75-color"})
                 +color-item({name: "Dark Shade 50%", description: "#1F2041", color: "dark-50-color"})
@@ -23,8 +23,7 @@ html(lang="en")
                 +color-item({name: "Dark Shade 5%", description: "#1F2041", color: "dark-5-color"})
                 +color-item({name: "Purple", description: "#BC9CFF", color: "purple-color"})
                 +color-item({name: "Green", description: "#6FCF96", color: "green-color"})
-
-            .text-item__wrapper
+            +wrapperBlock({})
                 +text-item({name: 'H1'})
                     h1 This one is the sub-section or widget title
                 +text-item({name: 'H2'})
@@ -33,7 +32,3 @@ html(lang="en")
                     h3 This is a label or CTA text
                 +text-item({name: 'Body'})
                     p This is the body text which is used for most of the design, like paragraphs, lists, etc.
-                //- +text-item({demo: "H1", info: "This one is the sub-section or widget title"})
-                //- +text-item({demo: "H2", info: "Next one is the item title inside widgets"})
-                //- +text-item({demo: "H3", info: "This is a label or CTA text", montserrat: true})
-                //- +text-item({demo: "Body", info: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", color: true})

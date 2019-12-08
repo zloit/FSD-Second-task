@@ -1,10 +1,15 @@
 .text-item {
     display: flex;
+    &:nth-child(1) {
+        @media screen and (max-width: $tableWidth) {
+            margin-top: 20px;
+        }
+    }
     &:nth-last-child(n+2) {
         margin-bottom: 50px;
-    }
-    &__wrapper {
-        flex-basis: 400px;
+        @media screen and (max-width: $tableWidth) {
+            margin-bottom: 20px;
+        }
     }
     &__demo {
         flex-basis: calc(100% - 40px);
@@ -12,7 +17,7 @@
 
     &__name {
         margin-right: 30px;
-        flex-basis: 40px;
+        width: 40px;
         text-align: right;
         color: $dark-25-color;
         &_H1 {

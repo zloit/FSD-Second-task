@@ -4,3 +4,10 @@ mixin wrapper(options)
     -wrapperCls += options.padding ? " wrapper_padding" : ""
     div(class=wrapperCls)
         block
+
+mixin wrapperBlock(options)
+    -let Cls = "wrapper__block"
+    -Cls += options.narrow ? " wrapper__block_narrow" : ""
+    -Cls += options.uiKit ? " wrapper__block_ui-kit" : ""
+    div(class=Cls)
+        block
