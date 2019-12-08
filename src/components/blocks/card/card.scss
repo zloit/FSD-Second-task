@@ -1,5 +1,10 @@
 .card {
-    width: 380px;
+    @media screen and (max-width: $phoneWidth ) {
+        width: 320px;
+    }
+    @media screen and (min-width: $phoneWidth ) {
+        width: 380px;
+    }
     padding: 40px 30px 30px 30px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.12);

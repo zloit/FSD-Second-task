@@ -17,11 +17,11 @@ html(lang="ru")
     body.greybg
         +wrapper({})
             +logo({})
-        +mainWrapper({})
-            +mainWrapperItem({})
+        +wrapper({flex: true})
+            +wrapperBlock({})
                 +search({title: "Найдём номера под ваши пожелания",uiKit:true})
                 +sign-up({title: "Регистрация аккаунта"})
-            +mainWrapperItem({})
+            +wrapperBlock({})
                 +reservation({
                     id: "reservation",
                     room: "888", 
@@ -34,7 +34,7 @@ html(lang="ru")
                     +service({name: "Сбор за услуги: скидка 2 179₽", price: "0", info: true})
                     +service({name: "Сбор за дополнительные услуги", price: "300", info: true})
                 +sign-in()
-            +mainWrapperItem({})
+            +wrapperBlock({})
                 #datepicker-inline
                 +room-preview({
                     room: 888,

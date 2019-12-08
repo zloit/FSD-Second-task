@@ -57,10 +57,12 @@
     }
     &__turn {
         position: absolute;
-        z-index: 0;
-        right: 0;
-        width: 44px;
-        line-height: 44px;
+        z-index: 1;
+        top: 30px;
+        right: 1px;
+        width: 43px;
+        line-height: 24px;
+        background: #fff;
         text-align: center;
         font-family: 'Material Icons';
         font-weight: normal;
